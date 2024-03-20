@@ -1,10 +1,10 @@
 .topBar {
 	background: #f4f6f8;
-	background-color: #00ab55;
+	background-color: #2251CF;
 	color: #fff;
 }
 .navBarWrap {
-    background: #00ab55;
+    background: #2251CF;
     color: #fff;
     height: 95px;
 	padding:7px 0;
@@ -37,13 +37,13 @@
 .search {
     width: 800px;
     height: 43px;
-    border: 1px solid #00ab55;
+    border: 1px solid #2251CF;
     display: flex;
     padding: 10px;
     border-radius: 4px;
     overflow: hidden;
     background: #fff;
-    color: #00ab55;
+    color: #2251CF;
 
 }
 .search input {
@@ -58,7 +58,7 @@
 .search button {
 	width: 30px;
 	height: 30px;
-	background: #00ab55;
+	background: #2251CF;
 	border-radius: 100%;
 	display: grid;
 	place-content: center;
@@ -204,7 +204,7 @@
 
 	.nav,
 	.activeNav {
-		background: #00ab55;
+		background: #2251CF;
 		display: block;
 		position: absolute;
 		left: -360px;

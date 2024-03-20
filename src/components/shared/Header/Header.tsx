@@ -9,8 +9,6 @@ import Link from 'next/link';
 import { HiOutlineChevronDown, HiOutlineGlobeAlt, HiOutlineSearch } from 'react-icons/hi';
 import { BsPerson } from 'react-icons/bs';
 import { CgShoppingCart } from 'react-icons/cg';
-import { MdExpandMore } from 'react-icons/md';
-import { StaticGenerationAsyncStorage } from 'next/dist/client/components/static-generation-async-storage.external';
 import Container from '@/components/ui/Container';
 
 
