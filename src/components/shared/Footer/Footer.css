@@ -3,6 +3,7 @@
 	display: flex;
 	justify-content: space-between;
 	padding: 50px 0;
+	flex-wrap: wrap;
 }
 
 .footer ul li {
