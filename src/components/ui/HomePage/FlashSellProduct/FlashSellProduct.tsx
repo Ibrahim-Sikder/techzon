@@ -1,43 +1,107 @@
-
 import "./FlashSellProduct.css";
-import flash from "../../../../../src/assets/images/flash8.png";
+import flash from "../../../../../src/assets/images/flash.png";
+import flash2 from "../../../../../src/assets/images/flash2.png";
+import flash3 from "../../../../../src/assets/images/flash3.png";
+import flash4 from "../../../../../src/assets/images/flash4.png";
+import flash5 from "../../../../../src/assets/images/flash5.png";
+import flash6 from "../../../../../src/assets/images/flash6.png";
+import flash7 from "../../../../../src/assets/images/flash8.png";
+import flash8 from "../../../../../src/assets/images/flash7.png";
 import Image from "next/image";
+
 import Container from "../../Container";
-import { HiMinus, HiOutlineEye, HiOutlineHeart, HiOutlineStar, HiStar } from "react-icons/hi";
+import {
+  HiMinus,
+  HiOutlineEye,
+  HiOutlineHeart,
+  HiOutlineStar,
+  HiStar,
+} from "react-icons/hi";
 const FlashSellProduct = () => {
-
-
-
+  const flashData = [
+    {
+      id: 1,
+      name: "Head Phone",
+      price: 13999,
+      img: flash,
+    },
+    {
+      id: 1,
+      name: "Head Phone",
+      price: 13999,
+      img: flash2,
+    },
+    {
+      id: 1,
+      name: "Head Phone",
+      price: 13999,
+      img: flash3,
+    },
+    {
+      id: 1,
+      name: "Head Phone",
+      price: 13999,
+      img: flash4,
+    },
+    {
+      id: 1,
+      name: "Head Phone",
+      price: 13999,
+      img: flash5,
+    },
+    {
+      id: 1,
+      name: "Head Phone",
+      price: 13999,
+      img: flash6,
+    },
+    {
+      id: 1,
+      name: "Head Phone",
+      price: 13999,
+      img: flash7,
+    },
+    {
+      id: 1,
+      name: "Head Phone",
+      price: 13999,
+      img: flash8,
+    },
+  ];
   return (
     <Container className="sectionMargin">
-      <h3 className="text-2xl font-semibold">Trending Best Selling Products</h3>
-      <div className="flashSellProductWrap">
-        <div>
-          <Image width="500" height="500" src={flash} alt="flash" />
-          <div>
-            <p>
-             Monitor Headphone
-            </p>
-            <div className="flex items-center">
-                <HiStar size={25} className=" startIcon"/>
-                <HiStar size={25} className=" startIcon"/>
-                <HiStar size={25} className=" startIcon"/>
-                <HiStar size={25} className=" startIcon"/>
-                <HiStar size={25} className=" startIcon"/>
+     <div className="flex items-center mb-10">
+     <h3 className="text-2xl font-semibold">Deals Of The Day </h3>
+      <span className="ml-10">Ends after: <span className=" bg-[#F14705] text-white px-3 py-1 ">05h: 13m: 47s</span></span>
+     </div>
+      <div className="grid grid-cols-4 gap-10">
+        {flashData.map((data) => (
+          <div key={data.id} className="flashSellProductWrap">
+            <div className="flashContent">
+              <Image width="500" height="500" src={data.img} alt="flash" />
+              <div>
+                <p className="flashCartName">{data.name}</p>
+                <button className="flashCartBtn ">Add To Cart</button>
+                <div className="flex items-center ">
+                  <HiStar size={25} className=" startIcon" />
+                  <HiStar size={25} className=" startIcon" />
+                  <HiStar size={25} className=" startIcon" />
+                  <HiStar size={25} className=" startIcon" />
+                  <HiStar size={25} className=" startIcon" />
+                </div>
+                <div className="flex items-center  my-2">
+                  <del className="mr-2"> ৳484848</del> <HiMinus />
+                  <b className="text-[#FCB903] ml-2">৳58999</b>
+                </div>
+              </div>
+              <div className="iconWraps space-y-4">
+                <HiOutlineEye className=" startIcon startIcon2" size={30} />
+                <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
+                <HiOutlineEye className=" startIcon startIcon2" size={30} />
+              </div>
             </div>
-            <div className="flex items-center ">
-
-                 <del className="mr-2"> ৳484848</del> <HiMinus />
-                <b className="text-[#FCB903] ml-2">৳58999</b> 
-            </div>
-            <div className="iconWraps space-y-2">
-              <HiOutlineEye className=" startIcon startIcon2" size={25}/>
-              <HiOutlineHeart className=" startIcon " size={25}/>
-              <HiOutlineEye className=" startIcon" size={25}/>
-            </div>
-            
           </div>
-        </div>
+        ))}
       </div>
     </Container>
   );
