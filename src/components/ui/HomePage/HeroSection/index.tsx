@@ -32,8 +32,9 @@ export default function HeroSection() {
     },
   });
 
+
   return (
-    <Container className="">
+    <Container className="heroSectionContainer">
       <div className="heroSectionWraps ">
         <div className="categoryHead space-y-4">
           <div className="flex items-center">
@@ -94,7 +95,7 @@ export default function HeroSection() {
             <div ref={sliderRef} className="keen-slider">
               <div className="keen-slider__slide number-slide1">
                 <div className="flex items-center sliderContentWrap">
-                  <div>
+                  <div className='sliderContent'>
                     <h3 className="text-5xl font-semibold uppercase">
                       The New standard
                     </h3>
@@ -112,7 +113,7 @@ export default function HeroSection() {
               </div>
               <div className="keen-slider__slide number-slide1">
                 <div className="flex items-center sliderContentWrap">
-                  <div>
+                  <div className='sliderContent'>
                     <h3 className="text-5xl font-semibold uppercase">
                       The New standard
                     </h3>
@@ -130,7 +131,7 @@ export default function HeroSection() {
               </div>
               <div className="keen-slider__slide number-slide1">
                 <div className="flex items-center sliderContentWrap">
-                  <div>
+                  <div className='sliderContent'>
                     <h3 className="text-5xl font-semibold uppercase">
                       The New standard
                     </h3>
@@ -148,7 +149,7 @@ export default function HeroSection() {
               </div>
               <div className="keen-slider__slide number-slide1">
                 <div className="flex items-center sliderContentWrap">
-                  <div>
+                  <div className='sliderContent'>
                     <h3 className="text-5xl font-semibold uppercase">
                       The New standard
                     </h3>

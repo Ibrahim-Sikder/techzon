@@ -1,11 +1,11 @@
-import "./FlashSellProduct.css";
-import flash from "../../../../../src/assets/images/flash.png";
-import flash2 from "../../../../../src/assets/images/flash2.png";
-import flash3 from "../../../../../src/assets/images/flash3.png";
-import flash4 from "../../../../../src/assets/images/flash4.png";
-import flash5 from "../../../../../src/assets/images/flash5.png";
-import flash6 from "../../../../../src/assets/images/flash6.png";
-import flash7 from "../../../../../src/assets/images/flash8.png";
+import "../FlashSellProduct/FlashSellProduct.css";
+import flash from "../../../../../src/assets/images/trending.png";
+import flash2 from "../../../../../src/assets/images/trending2.png";
+import flash3 from "../../../../../src/assets/images/trending3.png";
+import flash4 from "../../../../../src/assets/images/trending4.png";
+import flash5 from "../../../../../src/assets/images/trending5.png";
+import flash6 from "../../../../../src/assets/images/trending7.png";
+import flash7 from "../../../../../src/assets/images/trending8.png";
 import flash8 from "../../../../../src/assets/images/flash7.png";
 import Image from "next/image";
 
@@ -18,7 +18,7 @@ import {
   HiOutlineStar,
   HiStar,
 } from "react-icons/hi";
-const FlashSellProduct = () => {
+const TopRatedProduct = () => {
   const flashData = [
     {
       id: 1,
@@ -71,15 +71,8 @@ const FlashSellProduct = () => {
   ];
   return (
     <Container className="sectionMargin">
-     <div className="flex-wrap flex items-center mb-10 ">
-     <h3 className="text-2xl font-semibold">Deals Of The Day </h3>
-      <span className="ml-10">Ends after: <span className=" bg-[#F14705] text-white px-3 py-1 ">05h: 13m: 47s</span></span>
-
-     <div className="flex items-center ml-8">
-     <button>See All Product </button> <HiOutlineArrowNarrowRight size={20}/>
-     </div>
-     </div>
-      <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid xl:grid-cols-4 gap-10 place-content-center place-items-center">
+     <h3 className="text-3xl font-semibold mb-5 ">Top Trending Products </h3>
+      <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid xl:grid-cols-4 gap-10 place-content-center place-items-center mt-10">
         {flashData?.map((data) => (
           <div key={data.id} className="flashSellProductWrap">
             <div className="flashContent">
@@ -112,4 +105,4 @@ const FlashSellProduct = () => {
   );
 };
 
-export default FlashSellProduct;
+export default TopRatedProduct;

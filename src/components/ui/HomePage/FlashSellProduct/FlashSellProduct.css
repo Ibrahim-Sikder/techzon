@@ -16,7 +16,7 @@
     position:absolute;
     width:100%;
     height: 100%;
-    background:black;
+    background:#111;
     z-index: 5;
     top:0;
     bottom:0;
@@ -27,10 +27,10 @@
    
 }
 .flashSellProductWrap:hover{
-    color:#fff;
+    color:#111;
 }
 .flashSellProductWrap:hover.flashSellProductWrap::after{
-    opacity:0.4; 
+    opacity:0.1; 
 }
 .startIcon2{
     background:#fff;
@@ -74,4 +74,11 @@ position:relative;
     visibility: hidden;
     opacity:0;
     top:0px;
+}
+
+@media only screen and (max-width:500px){
+    .flashSellProductWrap{
+        width: 100%;
+       
+    }
 }
