@@ -1,4 +1,4 @@
-'use client'
+
 
 import Container from "@/components/ui/Container";
 import "../../../components/ui/HomePage/FlashSellProduct/FlashSellProduct.css";
@@ -13,8 +13,7 @@ import flash7 from "../../../../src/assets/images/flash8.png";
 import flash8 from "../../../../src/assets/images/flash7.png";
 import Image from "next/image";
 import { HiMinus, HiOutlineEye, HiOutlineHeart, HiStar } from "react-icons/hi";
-import { Card, Checkbox, CheckboxProps } from "antd";
-import { BiMinus } from "react-icons/bi";
+import ProductCard from "@/components/ProductCard/ProductCard";
 const ProductPage = () => {
   const flashData = [
     {
@@ -67,105 +66,12 @@ const ProductPage = () => {
     },
   ];
 
-  const onChange: CheckboxProps['onChange'] = (e) => {
-    console.log(`checked = ${e.target.checked}`);
-  };
+ 
   return (
-    <Container className="pt-20">
-      <div className="flex justify-center flex-wrap md:justify-between gap-5">
-        <div className="flex flex-wrap justify-between lg:block space-y-5 ">
-          <Card className="card">
-            <h4 className="text-xl font-semibold">Price Range </h4>
-          <div className="space-y-3 mt-3">
-          <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 ">$200.00  <BiMinus/>  $500 </p>
-           </div>
-           <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 ">$200.00  <BiMinus/>  $500 </p>
-           </div>
-           <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 ">$200.00  <BiMinus/>  $500 </p>
-           </div>
-           <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 ">$200.00  <BiMinus/>  $500 </p>
-           </div>
-           <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 ">$200.00  <BiMinus/>  $500 </p>
-           </div>
-          </div>
-          </Card>
-          <Card className="card">
-            <h4 className="text-xl font-semibold">Categories / Brands  </h4>
-          <div className="space-y-3 mt-3">
-          <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 " > Apple </p>
-           </div>
-           <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-
-           <p className="flex items-center ml-4 ">Samsung </p>
-           </div>
-           <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 ">Huawei </p>
-           </div>
-           <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 ">Xiaomi </p>
-           </div>
-           <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 ">OnePlus </p>
-           </div>
-           <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 ">Google (Pixel) </p>
-           </div>
-           <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 ">Oppo </p>
-           </div>
-
-           <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 ">Vivo </p>
-           </div>
-
-          </div>
-          </Card>
-          <Card className="card">
-            <h4 className="text-xl font-semibold">Ratings </h4>
-          <div className="space-y-3 mt-3">
-          <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 ">1Star </p>
-           </div>
-           <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 ">2Star </p>
-           </div>
-           <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 ">3Star </p>
-           </div>
-           <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 ">4Star </p>
-           </div>
-           <div className="flex items-center">
-           <Checkbox onChange={onChange} />
-           <p className="flex items-center ml-4 ">5Star </p>
-           </div>
-
-
-          </div>
-          </Card>
+    <Container className="pt-12">
+      <div className="flex justify-center flex-wrap lg:flex-nowrap md:justify-between gap-5">
+        <div>
+            <ProductCard/>
         </div>
         <div className="col-span-10">
           <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid  gap-10 place-content-center place-items-center">
