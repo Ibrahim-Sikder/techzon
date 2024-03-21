@@ -5,7 +5,6 @@ import slider from "../../../../assets/images/slider.png";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import Image from "next/image";
-import CommonButton from "@/components/CommonButton/CommonButton";
 import Container from "../../Container";
 import {
   FaBicycle,
@@ -18,6 +17,7 @@ import {
 import { HiDeviceTablet, HiOutlineWifi } from "react-icons/hi";
 import { LuWatch, LuYoutube } from "react-icons/lu";
 import { HiOutlineComputerDesktop } from "react-icons/hi2";
+import { Button } from "antd";
 
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = React.useState(0);
@@ -31,7 +31,6 @@ export default function HeroSection() {
       setLoaded(true);
     },
   });
-
 
   return (
     <Container className="heroSectionContainer">
@@ -95,7 +94,7 @@ export default function HeroSection() {
             <div ref={sliderRef} className="keen-slider">
               <div className="keen-slider__slide number-slide1">
                 <div className="flex items-center sliderContentWrap">
-                  <div className='sliderContent'>
+                  <div className="sliderContent">
                     <h3 className="text-5xl font-semibold uppercase">
                       The New standard
                     </h3>
@@ -106,14 +105,14 @@ export default function HeroSection() {
                       <span className="text-5xl font-bold">799</span>
                       <sup className="text-xl font-semibold">99</sup>
                     </div>
-                    <CommonButton text="Start Buying" />
+                    <Button>Start Buying</Button>
                   </div>
                   <Image src={slider} alt="slider" width="500" height="500" />
                 </div>
               </div>
               <div className="keen-slider__slide number-slide1">
                 <div className="flex items-center sliderContentWrap">
-                  <div className='sliderContent'>
+                  <div className="sliderContent">
                     <h3 className="text-5xl font-semibold uppercase">
                       The New standard
                     </h3>
@@ -124,14 +123,17 @@ export default function HeroSection() {
                       <span className="text-5xl font-bold">799</span>
                       <sup className="text-xl font-semibold">99</sup>
                     </div>
-                    <CommonButton text="Start Buying" />
+                    <button className="px-5 py-2 text-white bg-[#2251CF] border rounded-sm text-xl">
+                      {" "}
+                      Start Buying
+                    </button>
                   </div>
                   <Image src={slider} alt="slider" width="500" height="500" />
                 </div>
               </div>
               <div className="keen-slider__slide number-slide1">
                 <div className="flex items-center sliderContentWrap">
-                  <div className='sliderContent'>
+                  <div className="sliderContent">
                     <h3 className="text-5xl font-semibold uppercase">
                       The New standard
                     </h3>
@@ -142,14 +144,17 @@ export default function HeroSection() {
                       <span className="text-5xl font-bold">799</span>
                       <sup className="text-xl font-semibold">99</sup>
                     </div>
-                    <CommonButton text="Start Buying" />
+                    <button className="px-5 py-2 text-white bg-[#2251CF] border rounded-sm text-xl">
+                      {" "}
+                      Start Buying
+                    </button>
                   </div>
                   <Image src={slider} alt="slider" width="500" height="500" />
                 </div>
               </div>
               <div className="keen-slider__slide number-slide1">
                 <div className="flex items-center sliderContentWrap">
-                  <div className='sliderContent'>
+                  <div className="sliderContent">
                     <h3 className="text-5xl font-semibold uppercase">
                       The New standard
                     </h3>
@@ -160,7 +165,10 @@ export default function HeroSection() {
                       <span className="text-5xl font-bold">799</span>
                       <sup className="text-xl font-semibold">99</sup>
                     </div>
-                    <CommonButton text="Start Buying" />
+                    <button className="px-5 py-2 text-white bg-[#2251CF] border rounded-sm text-xl">
+                      {" "}
+                      Start Buying
+                    </button>
                   </div>
                   <Image src={slider} alt="slider" width="500" height="500" />
                 </div>

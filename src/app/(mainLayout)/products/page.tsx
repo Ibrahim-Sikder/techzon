@@ -14,6 +14,7 @@ import flash8 from "../../../../src/assets/images/flash7.png";
 import Image from "next/image";
 import { HiMinus, HiOutlineEye, HiOutlineHeart, HiStar } from "react-icons/hi";
 import ProductCard from "@/components/ProductCard/ProductCard";
+import Link from "next/link";
 const ProductPage = () => {
   const flashData = [
     {
@@ -74,7 +75,8 @@ const ProductPage = () => {
             <ProductCard/>
         </div>
         <div className="col-span-10">
-          <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid  gap-10 place-content-center place-items-center">
+         <Link href={`/products/id`}>
+         <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid  gap-10 place-content-center place-items-center">
             {flashData?.map((data) => (
               <div key={data.id} className="flashSellProductWrap productsCard">
                 <div className="flashContent">
@@ -106,6 +108,7 @@ const ProductPage = () => {
               </div>
             ))}
           </div>
+         </Link>
         </div>
       </div>
     </Container>
