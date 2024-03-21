@@ -24,11 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.className} flex-col flex justify-between h-screen `}>
-        <Header/>
+
         <Providers>
         {children}
         </Providers>
-        <Footer/>
+ 
         </body>
     </html>
   );

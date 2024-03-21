@@ -2,3 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html, body{
+    scroll-behavior: smooth;
+
+}
+body{
+    overflow-x: hidden;
+}
+.sectionMargin{
+    margin-top:80px;
+}

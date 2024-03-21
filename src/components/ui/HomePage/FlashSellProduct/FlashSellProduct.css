@@ -1,0 +1,15 @@
+.startIcon{
+    color:#FEBC0C;
+}
+.flashSellProductWrap{
+    width:400px;
+    border:1px solid black;
+    padding:5px;
+    position: inherit;
+}
+.startIcon2{
+    background:#fff;
+}
+.iconWraps{
+    position: absolute;
+}

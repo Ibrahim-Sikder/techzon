@@ -27,7 +27,7 @@ const Header = () => {
       <div className='navBarWrap'>
        <div>
        <TopBar />
-        <div className="">
+        <div>
           <Container className=''>
             <div className="header">
 
@@ -39,9 +39,9 @@ const Header = () => {
                   <span className={toggleMenu ? ` ` : `bar3`}></span>
                 </div>
               </div>
-              <Link href='/'> <h3 className="text-4xl font-bold">Zynix</h3></Link>
+              <Link href='/'> <h3 className="text-4xl font-bold"> TechZon </h3></Link>
               <div className='search'>
-                <input type="text" placeholder='Search in Zynix' autoComplete='off' />
+                <input type="text" placeholder='Search in TechZon' autoComplete='off' />
                 <button className='searchIconWrap'><HiOutlineSearch className='searchIcon' /> </button>
               </div>
 
@@ -69,9 +69,12 @@ const Header = () => {
             </div>
            
           </Container>
+          
+
         </div>
        </div>
       </div>
+      
     </div>
   );
 };

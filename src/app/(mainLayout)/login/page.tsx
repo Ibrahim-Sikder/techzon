@@ -1,4 +1,4 @@
-import google from '../../assets/images/google.png'
+import google from '../../../assets/images/google.png'
 import { FaFacebookF } from "react-icons/fa6";
 import { Input } from '@nextui-org/react';
 import Image from 'next/image';
@@ -10,7 +10,7 @@ const Login = () => {
                 <div className="text-center">
                     <h3 className="text-3xl font-bold text-center mb-5  capitalize">Hello</h3>
                     <span>
-                        Sign In ZynIx or <b className="border-b-2 border-[#00AB55]">create an account </b>
+                        Sign In TechZon or <b className="border-b-2 border-[#00AB55]">create an account </b>
                     </span>
                 </div>
                 <form className="businessFormWrap">
