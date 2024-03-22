@@ -7,6 +7,7 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import Container from "@/components/ui/Container";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -14,7 +15,9 @@ const Footer = () => {
       <Container className="">
         <div className="footer">
           <div>
-            <h3 className="text-xl font-bold mb-3"> Trending Products</h3>
+           <Link href='/products'>
+           <h3 className="text-xl font-bold mb-3"> Trending Products</h3>
+           </Link>
 
             <ul>
               <li>Wireless Earbuds</li>
@@ -26,7 +29,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
+            <Link href='/about-us'>
             <h3 className="text-xl font-bold mb-3">About Us</h3>
+            </Link>
             <ul>
               <li>About TechZon</li>
               <li>Contact TechZon</li>
@@ -60,7 +65,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-bold mb-3">Contact Us </h3>
+           <Link href='/contact-us'>
+           <h3 className="text-xl font-bold mb-3">Contact Us </h3>
+           </Link>
 
             <div>
               <button className="shopBtn mt-3 mb-3">Subscribe </button>
