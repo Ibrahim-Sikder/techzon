@@ -6,7 +6,7 @@ import './Header.css'
 import { useState } from 'react';
 import TopBar from './TopBar';
 import Link from 'next/link';
-import { HiOutlineChevronDown, HiOutlineGlobeAlt, HiOutlineSearch } from 'react-icons/hi';
+import { HiOutlineChevronDown, HiOutlineGlobeAlt, HiOutlineSearch, HiOutlineX } from 'react-icons/hi';
 import { BsPerson } from 'react-icons/bs';
 import { CgShoppingCart } from 'react-icons/cg';
 import Container from '@/components/ui/Container';
@@ -27,11 +27,11 @@ const Header = () => {
       <div className='navBarWrap'>
        <div>
        <TopBar />
-        <div>
+        <div className='relative'>
           <Container className=''>
             <div className="header">
 
-              {/* mobile toggle menu  */}
+            <Link href='/'> <h3 className="text-4xl font-bold"> TechZon </h3></Link>
               <div className='hideBar' onClick={handleToggle}>
                 <div className={toggleMenu ? `bar` : ` bar activeMenuBar`}>
                   <span className={toggleMenu ? ` ` : `bar1`}></span>
@@ -39,7 +39,8 @@ const Header = () => {
                   <span className={toggleMenu ? ` ` : `bar3`}></span>
                 </div>
               </div>
-              <Link href='/'> <h3 className="text-4xl font-bold"> TechZon </h3></Link>
+
+        
               <div className='search'>
                 <input type="text" placeholder='Search in TechZon' autoComplete='off' />
                 <button className='searchIconWrap'><HiOutlineSearch className='searchIcon' /> </button>
@@ -69,7 +70,20 @@ const Header = () => {
             </div>
            
           </Container>
-          
+            <nav className={toggleMenu ? `nav shadow-lg ` : `activeNav shadow-lg`}>
+           <div className="flex items-center justify-between pr-5">
+           <Link href='/'> <h3 className="text-4xl font-bold mb-3"> TechZon </h3></Link>
+            <HiOutlineX onClick={handleToggle} size={35} className='cursor-pointer'/>
+           </div>
+              <ul className='space-y-3'>
+                <li>Home</li>
+                <li>Categories</li>
+                <li>Products</li>
+                <li>Flash Sale</li>
+                <li>About Us</li>
+                <li>Contact Us</li>
+              </ul>
+            </nav>
 
         </div>
        </div>

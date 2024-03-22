@@ -12,9 +12,10 @@ import flash6 from "../../../../src/assets/images/flash6.png";
 import flash7 from "../../../../src/assets/images/flash8.png";
 import flash8 from "../../../../src/assets/images/flash7.png";
 import Image from "next/image";
-import { HiMinus, HiOutlineEye, HiOutlineHeart, HiStar } from "react-icons/hi";
+import { HiMinus, HiOutlineEye, HiOutlineHeart, HiOutlineShoppingCart, HiStar } from "react-icons/hi";
 import ProductCard from "@/components/ProductCard/ProductCard";
 import Link from "next/link";
+import ProductIcons from "@/components/ui/HomePage/FlashSellProduct/ProductIcons";
 const ProductPage = () => {
   const flashData = [
     {
@@ -96,15 +97,21 @@ const ProductPage = () => {
                       <b className="text-[#2251CF] ml-2">৳58999</b>
                     </div>
                   </div>
-                  <div className="iconWraps space-y-4">
+                  {/* <div className="iconWraps space-y-4">
                     <HiOutlineEye className=" startIcon startIcon2" size={30} />
                     <HiOutlineHeart
                       className=" startIcon  startIcon2"
                       size={30}
                     />
                     <HiOutlineEye className=" startIcon startIcon2" size={30} />
-                  </div>
+                  </div> */}
                 </div>
+                <div className="iconWraps space-y-4">
+              <ProductIcons/>
+                <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
+                <HiOutlineShoppingCart className=" startIcon startIcon2" size={30} />
+               
+              </div>
               </div>
             ))}
           </div>

@@ -7,8 +7,9 @@ import categories3 from "../../../../assets/images/categories6.png";
 import categories4 from "../../../../assets/images/categories7.png";
 import categories2 from "../../../../assets/images/categories.webp";
 import categories5 from "../../../../assets/images/categories3.png";
-import { HiMinus, HiOutlineEye, HiOutlineHeart, HiStar } from "react-icons/hi";
+import { HiMinus, HiOutlineEye, HiOutlineHeart, HiOutlineShoppingCart, HiStar } from "react-icons/hi";
 import Image from "next/image";
+import ProductIcons from "../FlashSellProduct/ProductIcons";
 const Categories = () => {
   return (
     <Container className="sectionMargin">
@@ -33,12 +34,18 @@ const Categories = () => {
                   <b className="text-[#2251CF] ml-2">৳58999</b>
                 </div>
               </div>
-              <div className="iconWraps space-y-4">
+              {/* <div className="iconWraps space-y-4">
                 <HiOutlineEye className=" startIcon startIcon2" size={30} />
                 <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
                 <HiOutlineEye className=" startIcon startIcon2" size={30} />
-              </div>
+              </div> */}
             </div>
+            <div className="iconWraps space-y-4">
+              <ProductIcons/>
+                <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
+                <HiOutlineShoppingCart className=" startIcon startIcon2" size={30} />
+               
+              </div>
           </div>
           <div className=" flashSellProductWrap categoriesCard  ">
             <div className="flashContent">
@@ -58,12 +65,20 @@ const Categories = () => {
                   <b className="text-[#2251CF] ml-2">৳58999</b>
                 </div>
               </div>
-              <div className="iconWraps space-y-4">
+              {/* <div className="iconWraps space-y-4">
                 <HiOutlineEye className=" startIcon startIcon2" size={30} />
                 <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
                 <HiOutlineEye className=" startIcon startIcon2" size={30} />
-              </div>
+              </div> */}
             </div>
+            <div className="iconWraps space-y-4">
+              <ProductIcons/>
+                <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
+                <HiOutlineShoppingCart className=" startIcon startIcon2" size={30} />
+               
+              </div>
+
+
           </div>
         </div>
         <div className=" flashSellProductWrap categoriesCard categoriesCard2  xl:col-span-8 middleCategories">
@@ -84,12 +99,18 @@ const Categories = () => {
                 <b className="text-[#2251CF] ml-2">৳58999</b>
               </div>
             </div>
-            <div className="iconWraps space-y-4">
+            {/* <div className="iconWraps space-y-4">
               <HiOutlineEye className=" startIcon startIcon2" size={30} />
               <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
               <HiOutlineEye className=" startIcon startIcon2" size={30} />
-            </div>
+            </div> */}
           </div>
+          <div className="iconWraps space-y-4">
+              <ProductIcons/>
+                <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
+                <HiOutlineShoppingCart className=" startIcon startIcon2" size={30} />
+               
+              </div>
         </div>
         <div className="xl:col-span-2 col-span-1 ">
           <div className=" flashSellProductWrap categoriesCard col-span-2 ">
@@ -136,12 +157,18 @@ const Categories = () => {
                   <b className="text-[#2251CF] ml-2">৳58999</b>
                 </div>
               </div>
-              <div className="iconWraps space-y-4">
+              {/* <div className="iconWraps space-y-4">
                 <HiOutlineEye className=" startIcon startIcon2" size={30} />
                 <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
                 <HiOutlineEye className=" startIcon startIcon2" size={30} />
-              </div>
+              </div> */}
             </div>
+            <div className="iconWraps space-y-4">
+              <ProductIcons/>
+                <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
+                <HiOutlineShoppingCart className=" startIcon startIcon2" size={30} />
+               
+              </div>
           </div>
         </div>
       </div>

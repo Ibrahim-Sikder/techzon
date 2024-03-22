@@ -14,11 +14,16 @@ import {
   HiMinus,
   HiOutlineArrowNarrowRight,
   HiOutlineEye,
+
   HiOutlineHeart,
+  HiOutlineShoppingCart,
   HiOutlineStar,
   HiStar,
 } from "react-icons/hi";
+import ProductIcons from "./ProductIcons";
 const FlashSellProduct = () => {
+
+
   const flashData = [
     {
       id: 1,
@@ -99,12 +104,14 @@ const FlashSellProduct = () => {
                   <b className="text-[#2251CF] ml-2">৳58999</b>
                 </div>
               </div>
-              <div className="iconWraps space-y-4">
-                <HiOutlineEye className=" startIcon startIcon2" size={30} />
-                <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
-                <HiOutlineEye className=" startIcon startIcon2" size={30} />
-              </div>
+             
             </div>
+            <div className="iconWraps space-y-4">
+              <ProductIcons/>
+                <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
+                <HiOutlineShoppingCart className=" startIcon startIcon2" size={30} />
+               
+              </div>
           </div>
         ))}
       </div>
