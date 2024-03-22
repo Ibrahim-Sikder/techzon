@@ -11,7 +11,7 @@ import slider7 from "../../../../assets/images/slider4.webp";
 import slider8 from "../../../../assets/images/slider5.jpg";
 import slider9 from "../../../../assets/images/slider6.webp";
 import slider10 from "../../../../assets/images/headphone.png";
-import { useKeenSlider } from "keen-slider/react";
+import { KeenSliderInstance, useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import Image from "next/image";
 import Container from "../../Container";
@@ -35,7 +35,11 @@ export default function HeroSection() {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slideChanged(slider) {
-      setCurrentSlide(slider.details().relativeSlide as number);
+      const keenSlider = slider as KeenSliderInstance<any, any, any>;
+      if (keenSlider.details) {
+        setCurrentSlide(keenSlider.details().relativeSlide as number);
+      }
+      // setCurrentSlide(slider.details().relativeSlide as number);
     },
     created() {
       setLoaded(true);

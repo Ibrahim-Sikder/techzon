@@ -46,11 +46,11 @@ const Header = () => {
                 <button className='searchIconWrap'><HiOutlineSearch className='searchIcon' /> </button>
               </div>
 
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3 loginbtn">
                 <div className="onlinShopping">
                   <Link href='/my-account'> <BsPerson className='personIcon' /></Link>
                 </div>
-                <div className='flex items-center ml-3'>
+                <div className='flex items-center ml-3 loginbtn'>
 
                 <button>Login</button>
                 </div>

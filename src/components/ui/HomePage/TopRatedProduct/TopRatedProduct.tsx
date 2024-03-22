@@ -74,7 +74,7 @@ const TopRatedProduct = () => {
   ];
   return (
     <Container className="sectionMargin">
-      <div className="flex items-center">
+      <div className="flex items-center flex-wrap ">
         <h3 className="text-3xl font-semibold mb-5 ">Top Trending Products </h3>
         <Link href='/products'>
         <button className="bg-[#2251CF] text-white px-3 py-2  rounded-sm ml-3 flex items-center ">

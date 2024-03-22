@@ -126,7 +126,7 @@
 		transition: all 0.5s linear(-0.47 -53.68%, 1 100%);
 		top: 5px;
 		left: 5px;
-		z-index: 99999999999999;
+		z-index: 9999;
 		position: relative;
 	}
 
@@ -241,4 +241,11 @@
 	.vegetableDropDownMenu {
 		top: 200px;
 	} */
+}
+
+
+@media only screen and (max-width:500px){
+	.loginbtn{
+		display:none;
+	}
 }
