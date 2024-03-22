@@ -10,7 +10,7 @@ import Container from "@/components/ui/Container";
 
 const Footer = () => {
   return (
-    <div className="bg-[#FFFFFF]">
+    <div className="bg-[#FFFFFF] sectionMargin ">
       <Container className="">
         <div className="footer">
           <div>

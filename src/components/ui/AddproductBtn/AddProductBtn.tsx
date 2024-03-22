@@ -15,7 +15,7 @@ const AddProductBtn = () => {
     }
     return (
         <div>
-            <div className='addToCartBtn flex items-center justify-between px-5'>
+            <div className='addToCartBtn flex items-center justify-between px-5 mr-3'>
                  <BiMinus onClick={handleDecrease} size={25}/>
                     <span>{addToCart}</span>
                 <BiPlus onClick={handleIncrease} size={25}/>

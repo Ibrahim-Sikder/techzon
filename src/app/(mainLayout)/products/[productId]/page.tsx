@@ -8,17 +8,21 @@ import AddProductBtn from "@/components/ui/AddproductBtn/AddProductBtn";
 const SingleProduct = () => {
   return (
     <Container className="mt-10">
-        <div className="flex items-center space-x-3">
-            <span>Home</span>
-            <HiChevronRight/>
-            <button className="bg-[#E8E8E8] px-3 py-2  rounded-sm ">Accessories</button>
-            <HiChevronRight/>
-            <button className="bg-[#E8E8E8] px-3 py-2  rounded-sm ">Accessories</button>
-            <HiChevronRight/>
-            <small>Ultra Wireless S50 Headphones S50 with Bluetooth</small>
-        </div>
-      <div className="flex items-center">
-        <div className='w-[50%] overflow-hidden'>
+      <div className="gap-3 flex-wrap flex items-center space-x-3">
+        <span>Home</span>
+        <HiChevronRight />
+        <button className="bg-[#E8E8E8] px-3 py-2  rounded-sm ">
+          Accessories
+        </button>
+        <HiChevronRight />
+        <button className="bg-[#E8E8E8] px-3 py-2  rounded-sm ">
+          Accessories
+        </button>
+        <HiChevronRight />
+        <small>Ultra Wireless S50 Headphones S50 with Bluetooth</small>
+      </div>
+      <div className="flex-wrap xl:flex-nowrap flex items-center gap-14">
+        <div className="xl:w-[50%] overflow-hidden w-full ">
           <SinglePageSlider />
         </div>
         <div className="border-b border-[#ddd]">
@@ -63,7 +67,7 @@ const SingleProduct = () => {
           <hr className="my-5" />
           <div>
             <span>Quantity </span>
-            <div className="flex items-center ">
+            <div className="flex items-center mt-2 mb-5">
               <AddProductBtn />
 
               <button className="addToCartBtn">Add to cart</button>
