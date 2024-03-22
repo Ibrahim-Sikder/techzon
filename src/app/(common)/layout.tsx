@@ -1,7 +1,7 @@
 'use client'
 
 
-import React, { useState } from 'react';
+import React, { ReactNode, useState } from 'react';
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -11,10 +11,11 @@ import {
 } from '@ant-design/icons';
 import { Layout, Menu, Button, theme } from 'antd';
 import Link from 'next/link';
+import { HiOutlineHome, HiOutlineShoppingBag } from 'react-icons/hi';
 
 const { Header, Sider, Content } = Layout;
 
-const DashboardPage = ({children}) => {
+const DashboardPage = ({children}:{children:ReactNode}) => {
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -31,12 +32,12 @@ const DashboardPage = ({children}) => {
           items={[
             {
               key: 'dashboard',
-              icon: <UserOutlined />,
+              icon: <HiOutlineHome />,
               label: <Link href='/dashboard'>Dashboard</Link>,
             },
             {
               key: 'dashboard/all-products/',
-              icon: <VideoCameraOutlined />,
+              icon: <HiOutlineShoppingBag />,
               label: <Link href='dashboard/all-products'>All-Products</Link>,
             },
             {
