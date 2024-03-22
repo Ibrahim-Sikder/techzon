@@ -21,6 +21,7 @@ import {
   HiStar,
 } from "react-icons/hi";
 import ProductIcons from "./ProductIcons";
+import Link from "next/link";
 const FlashSellProduct = () => {
 
 
@@ -80,9 +81,11 @@ const FlashSellProduct = () => {
      <h3 className="text-2xl font-semibold">Deals Of The Day </h3>
       <span className="ml-10">Ends after: <span className=" bg-[#F14705] text-white px-3 py-1 ">05h: 13m: 47s</span></span>
 
-     <div className="flex items-center ml-8">
-     <button>See All Product </button> <HiOutlineArrowNarrowRight size={20}/>
+    <Link href='/flash-sale'>
+    <div className="flex items-center ml-8">
+     <button>See All </button> <HiOutlineArrowNarrowRight size={20}/>
      </div>
+    </Link>
      </div>
       <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid xl:grid-cols-4 gap-10 place-content-center place-items-center">
         {flashData?.map((data) => (

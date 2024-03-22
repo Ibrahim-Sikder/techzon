@@ -20,6 +20,7 @@ import {
   HiStar,
 } from "react-icons/hi";
 import ProductIcons from "../FlashSellProduct/ProductIcons";
+import Link from "next/link";
 const TopRatedProduct = () => {
   const flashData = [
     {
@@ -73,7 +74,14 @@ const TopRatedProduct = () => {
   ];
   return (
     <Container className="sectionMargin">
-     <h3 className="text-3xl font-semibold mb-5 ">Top Trending Products </h3>
+      <div className="flex items-center">
+        <h3 className="text-3xl font-semibold mb-5 ">Top Trending Products </h3>
+        <Link href='/products'>
+        <button className="bg-[#2251CF] text-white px-3 py-2  rounded-sm ml-3 flex items-center ">
+         <span> See All Products</span> <HiOutlineArrowNarrowRight />
+        </button>
+        </Link>
+      </div>
       <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid xl:grid-cols-4 gap-10 place-content-center place-items-center mt-10">
         {flashData?.map((data) => (
           <div key={data.id} className="flashSellProductWrap">
@@ -94,14 +102,15 @@ const TopRatedProduct = () => {
                   <b className="text-[#2251CF] ml-2">৳58999</b>
                 </div>
               </div>
-             
             </div>
             <div className="iconWraps space-y-4">
-              <ProductIcons/>
-                <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
-                <HiOutlineShoppingCart className=" startIcon startIcon2" size={30} />
-               
-              </div>
+              <ProductIcons />
+              <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
+              <HiOutlineShoppingCart
+                className=" startIcon startIcon2"
+                size={30}
+              />
+            </div>
           </div>
         ))}
       </div>

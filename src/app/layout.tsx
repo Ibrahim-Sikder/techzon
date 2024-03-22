@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/shared/Header/Header";
 import Footer from "@/components/shared/Footer/Footer";
 import { Providers } from "@/components/lib/Providers";
+import ScrollTopBtn from "@/components/ScrollTopBtn";
 
 const roboto = Roboto({
   weight: "400",
@@ -26,10 +27,11 @@ export default function RootLayout({
       <body className={`${roboto.className} flex-col flex justify-between h-screen `}>
 
         <Providers>
-        {children}
+          {children}
         </Providers>
- 
-        </body>
+
+        <ScrollTopBtn />
+      </body>
     </html>
   );
 }

@@ -1,7 +1,16 @@
 "use client";
 import "./HeroSection.css";
-import React, { useState } from "react";
-import slider from "../../../../assets/images/slider.png";
+import React, { useEffect, useState } from "react";
+import slider from "../../../../assets/images/slider2.webp";
+import slider2 from "../../../../assets/images/categories.webp";
+import slider3 from "../../../../assets/images/flash8.png";
+import slider4 from "../../../../assets/images/explore.png";
+import slider5 from "../../../../assets/images/explore2.png";
+import slider6 from "../../../../assets/images/slider3.webp";
+import slider7 from "../../../../assets/images/slider4.webp";
+import slider8 from "../../../../assets/images/slider5.jpg";
+import slider9 from "../../../../assets/images/slider6.webp";
+import slider10 from "../../../../assets/images/headphone.png";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import Image from "next/image";
@@ -20,18 +29,29 @@ import { HiOutlineComputerDesktop } from "react-icons/hi2";
 import { Button } from "antd";
 
 export default function HeroSection() {
-  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
+
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel);
+      setCurrentSlide(slider.details().relativeSlide as number);
     },
     created() {
       setLoaded(true);
     },
+    loop: true, // Enable looping
   });
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (instanceRef.current) {
+        instanceRef.current.next();
+      }
+    }, 5000); // Change the interval duration as needed (2000 ms = 2 seconds)
+
+    return () => clearInterval(interval);
+  }, [instanceRef]);
   return (
     <Container className="heroSectionContainer">
       <div className="heroSectionWraps ">
@@ -128,7 +148,7 @@ export default function HeroSection() {
                       Start Buying
                     </button>
                   </div>
-                  <Image src={slider} alt="slider" width="500" height="500" />
+                  <Image src={slider2} alt="slider" width="500" height="500" />
                 </div>
               </div>
               <div className="keen-slider__slide number-slide1">
@@ -149,7 +169,7 @@ export default function HeroSection() {
                       Start Buying
                     </button>
                   </div>
-                  <Image src={slider} alt="slider" width="500" height="500" />
+                  <Image src={slider3} alt="slider" width="500" height="500" />
                 </div>
               </div>
               <div className="keen-slider__slide number-slide1">
@@ -170,7 +190,112 @@ export default function HeroSection() {
                       Start Buying
                     </button>
                   </div>
-                  <Image src={slider} alt="slider" width="500" height="500" />
+                  <Image src={slider4} alt="slider" width="500" height="500" />
+                </div>
+              </div>
+              <div className="keen-slider__slide number-slide1">
+                <div className="flex items-center sliderContentWrap">
+                  <div className="sliderContent">
+                    <h3 className="text-5xl font-semibold uppercase">
+                      The New standard
+                    </h3>
+                    <p className="my-3">"NeoTech Edge: Unveiling Simplicity"</p>
+                    <small>FROM</small>
+                    <div className=" flex items-center ">
+                      <sup className="text-2xl font-semibold">$</sup>
+                      <span className="text-5xl font-bold">799</span>
+                      <sup className="text-xl font-semibold">99</sup>
+                    </div>
+                    <button className="px-5 py-2 text-white bg-[#2251CF] border rounded-sm text-xl">
+                      {" "}
+                      Start Buying
+                    </button>
+                  </div>
+                  <Image src={slider6} alt="slider" width="500" height="500" />
+                </div>
+              </div>
+              <div className="keen-slider__slide number-slide1">
+                <div className="flex items-center sliderContentWrap">
+                  <div className="sliderContent">
+                    <h3 className="text-5xl font-semibold uppercase">
+                      The New standard
+                    </h3>
+                    <p className="my-3">"NeoTech Edge: Unveiling Simplicity"</p>
+                    <small>FROM</small>
+                    <div className=" flex items-center ">
+                      <sup className="text-2xl font-semibold">$</sup>
+                      <span className="text-5xl font-bold">799</span>
+                      <sup className="text-xl font-semibold">99</sup>
+                    </div>
+                    <button className="px-5 py-2 text-white bg-[#2251CF] border rounded-sm text-xl">
+                      {" "}
+                      Start Buying
+                    </button>
+                  </div>
+                  <Image src={slider7} alt="slider" width="500" height="500" />
+                </div>
+              </div>
+              <div className="keen-slider__slide number-slide1">
+                <div className="flex items-center sliderContentWrap">
+                  <div className="sliderContent">
+                    <h3 className="text-5xl font-semibold uppercase">
+                      The New standard
+                    </h3>
+                    <p className="my-3">"NeoTech Edge: Unveiling Simplicity"</p>
+                    <small>FROM</small>
+                    <div className=" flex items-center ">
+                      <sup className="text-2xl font-semibold">$</sup>
+                      <span className="text-5xl font-bold">799</span>
+                      <sup className="text-xl font-semibold">99</sup>
+                    </div>
+                    <button className="px-5 py-2 text-white bg-[#2251CF] border rounded-sm text-xl">
+                      {" "}
+                      Start Buying
+                    </button>
+                  </div>
+                  <Image src={slider8} alt="slider" width="500" height="500" />
+                </div>
+              </div>
+              <div className="keen-slider__slide number-slide1">
+                <div className="flex items-center sliderContentWrap">
+                  <div className="sliderContent">
+                    <h3 className="text-5xl font-semibold uppercase">
+                      The New standard
+                    </h3>
+                    <p className="my-3">"NeoTech Edge: Unveiling Simplicity"</p>
+                    <small>FROM</small>
+                    <div className=" flex items-center ">
+                      <sup className="text-2xl font-semibold">$</sup>
+                      <span className="text-5xl font-bold">799</span>
+                      <sup className="text-xl font-semibold">99</sup>
+                    </div>
+                    <button className="px-5 py-2 text-white bg-[#2251CF] border rounded-sm text-xl">
+                      {" "}
+                      Start Buying
+                    </button>
+                  </div>
+                  <Image src={slider9} alt="slider" width="500" height="500" />
+                </div>
+              </div>
+              <div className="keen-slider__slide number-slide1">
+                <div className="flex items-center sliderContentWrap">
+                  <div className="sliderContent">
+                    <h3 className="text-5xl font-semibold uppercase">
+                      The New standard
+                    </h3>
+                    <p className="my-3">"NeoTech Edge: Unveiling Simplicity"</p>
+                    <small>FROM</small>
+                    <div className=" flex items-center ">
+                      <sup className="text-2xl font-semibold">$</sup>
+                      <span className="text-5xl font-bold">799</span>
+                      <sup className="text-xl font-semibold">99</sup>
+                    </div>
+                    <button className="px-5 py-2 text-white bg-[#2251CF] border rounded-sm text-xl">
+                      {" "}
+                      Start Buying
+                    </button>
+                  </div>
+                  <Image src={slider10} alt="slider" width="500" height="500" />
                 </div>
               </div>
             </div>
