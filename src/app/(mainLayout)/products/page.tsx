@@ -16,7 +16,15 @@ import { HiMinus, HiOutlineEye, HiOutlineHeart, HiOutlineShoppingCart, HiStar } 
 import ProductCard from "@/components/ProductCard/ProductCard";
 import Link from "next/link";
 import ProductIcons from "@/components/ui/HomePage/FlashSellProduct/ProductIcons";
-const ProductPage = () => {
+const ProductPage = async () => {
+  const res = await fetch('http://localhost:5000/api/v1/products',{
+    next:{
+      revalidate: 30
+    }
+  })
+  const products = await  res.json()
+  console.log(products.data)
+
   const flashData = [
     {
       id: 1,
@@ -78,10 +86,10 @@ const ProductPage = () => {
         <div className="col-span-10">
          <Link href={`/products/id`}>
          <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid  gap-10 place-content-center place-items-center">
-            {flashData?.map((data) => (
+            {products.data?.map((data) => (
               <div key={data.id} className="flashSellProductWrap productsCard">
                 <div className="flashContent">
-                  <Image width="500" height="500" src={data.img} alt="flash" />
+                  <Image width="500" height="500" src={data.image} alt="flash" />
                   <div>
                     <p className="flashCartName">{data.name}</p>
                     <button className="flashCartBtn ">Add To Cart</button>
