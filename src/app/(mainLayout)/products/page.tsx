@@ -13,6 +13,14 @@ import flash7 from "../../../../src/assets/images/flash8.png";
 import flash8 from "../../../../src/assets/images/flash7.png";
 import Image from "next/image";
 import { HiMinus, HiOutlineEye, HiOutlineHeart, HiOutlineShoppingCart, HiStar } from "react-icons/hi";
+
+
+type TProduct = {
+  name:stirng,
+  
+}
+
+
 import ProductCard from "@/components/ProductCard/ProductCard";
 import Link from "next/link";
 import ProductIcons from "@/components/ui/HomePage/FlashSellProduct/ProductIcons";
@@ -23,7 +31,7 @@ const ProductPage = async () => {
     }
   })
   const products = await  res.json()
-  console.log(products.data)
+ 
 
   const flashData = [
     {
