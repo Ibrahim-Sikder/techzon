@@ -5,6 +5,11 @@ import { HiChevronRight, HiStar } from "react-icons/hi";
 import TZSelect from "@/components/ui/TZSelect/TZSelect";
 import "../product.css";
 import AddProductBtn from "@/components/ui/AddproductBtn/AddProductBtn";
+type TProductId = {
+  params: {
+    productId:string
+  }
+}
 const SingleProduct = async ({ params }) => {
   const res = await fetch(
     `http://localhost:5000/api/v1/products/${params.productId}`,
@@ -62,7 +67,7 @@ const SingleProduct = async ({ params }) => {
           <p className=" text-[#7c7c7c] my-5">
            {products.data.description} 
           </p>
-          <span className="my-5 block">SKU: FW511948218</span>
+          <span className="my-5 block"> {products.data.brand}: FW511948218</span>
           <div className="flex items-">
             <span className="text-5xl">${products.data.price}</span>{" "}
             <del className="text-xl">$2,299.00</del>
