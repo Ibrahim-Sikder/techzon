@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+
 import Link from "next/link";
 import Image from "next/image";
 import Container from "../../Container";
@@ -22,7 +22,7 @@ const TopRatedProduct = async () => {
   });
   const products = await res.json();
 
-  // Sort products based on rating in descending order
+  
   const sortedProducts = products?.data?.sort(
     (a: TProduct, b: TProduct) => b.review - a.review
   );

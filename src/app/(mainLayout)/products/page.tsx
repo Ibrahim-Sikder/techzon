@@ -23,7 +23,8 @@ import Link from "next/link";
 import ProductIcons from "@/components/ui/HomePage/FlashSellProduct/ProductIcons";
 import { TProduct } from "@/types";
 const ProductPage = async () => {
-  const res = await fetch('http://localhost:5000/api/v1/products',{
+
+  const res = await fetch('http://localhost:5000/api/v1/products?category=${categories}',{
     next:{
       revalidate: 30
     }
