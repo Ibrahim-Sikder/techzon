@@ -12,6 +12,7 @@ export type TContainer = {
     discount:number,
     review:number,
     categories:string,
+    rating:string
     
   
   }
