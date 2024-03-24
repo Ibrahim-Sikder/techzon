@@ -16,10 +16,14 @@ import { HiOutlineHome, HiOutlineShoppingBag } from 'react-icons/hi';
 const { Header, Sider, Content } = Layout;
 
 const DashboardPage = ({children}:{children:ReactNode}) => {
+
+
+
   const [collapsed, setCollapsed] = useState(false);
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
+
 
   return (
     <Layout style={{ height: "100vh" }}>
@@ -38,7 +42,7 @@ const DashboardPage = ({children}:{children:ReactNode}) => {
             {
               key: 'dashboard/all-products/',
               icon: <HiOutlineShoppingBag />,
-              label: <Link href='dashboard/all-products'>All-Products</Link>,
+              label: <Link href='/dashboard/all-products'>All-Products</Link>,
             },
             {
               key: '3',
