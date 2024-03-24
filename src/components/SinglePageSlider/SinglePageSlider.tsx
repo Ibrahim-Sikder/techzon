@@ -1,11 +1,6 @@
 "use client";
 
 import "keen-slider/keen-slider.min.css";
-import slider from "../../assets/images/headphone.png";
-import slider2 from "../../assets/images/headphone2.png";
-import slider3 from "../../assets/images/headphone3.png";
-import slider4 from "../../assets/images/headphone5.png";
-import slider5 from "../../assets/images/headphone6.png";
 import Image from "next/image";
 
 import React, { MutableRefObject } from "react";
@@ -15,6 +10,19 @@ import {
   KeenSliderPlugin,
   KeenSliderInstance,
 } from "keen-slider/react";
+import { TProductId } from "@/types";
+
+
+interface SinglePageSliderProps {
+  product: {
+    data: {
+      image: string;
+      // Add other properties as needed
+    };
+    // Add other properties as needed
+  };
+}
+
 
 function ThumbnailPlugin(
   mainRef: MutableRefObject<KeenSliderInstance | null>
@@ -51,7 +59,7 @@ function ThumbnailPlugin(
   };
 }
 
-export default function SinglePageSlider({ product }) {
+export default function SinglePageSlider({ product }:SinglePageSliderProps) {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
   });

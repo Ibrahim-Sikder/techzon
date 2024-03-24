@@ -8,7 +8,11 @@ import TZSelect from "../../TZSelect/TZSelect";
 import AddProductBtn from "../../AddproductBtn/AddProductBtn";
 import './FlashSellProduct.css'
 
-const ProductModal = ({ onClose }) => {
+interface ProductModalProps {
+  onClose: () => void;
+}
+
+const ProductModal: React.FC<ProductModalProps> = ({ onClose }) =>{
 
 
   return (
@@ -40,7 +44,11 @@ const ProductModal = ({ onClose }) => {
       </div>
       <div className="flex-wrap xl:flex-nowrap flex items-center gap-14">
         <div className="xl:w-[50%] overflow-hidden w-full ">
-          <SinglePageSlider />
+          <SinglePageSlider product={{
+                  data: {
+                    image: ""
+                  }
+                }} />
         </div>
         <div className="border-b border-[#ddd]">
           <small>Headphones</small>

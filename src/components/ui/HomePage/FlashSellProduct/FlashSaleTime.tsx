@@ -21,14 +21,15 @@ const FlashSaleTime = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const formatTime = (endTime: number | Date) => {
-    const diff = endTime - new Date();
+  const formatTime = (endTime: Date) => {
+    const diff = endTime.getTime() - new Date().getTime();
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
     return { days, hours, minutes, seconds };
   };
+  
 
   return (
     <div className="flex-wrap flex items-center">

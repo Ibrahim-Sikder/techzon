@@ -5,12 +5,9 @@ import { HiChevronRight, HiStar } from "react-icons/hi";
 import TZSelect from "@/components/ui/TZSelect/TZSelect";
 import "../product.css";
 import AddProductBtn from "@/components/ui/AddproductBtn/AddProductBtn";
-type TProductId = {
-  params: {
-    productId:string
-  }
-}
-const SingleProduct = async ({ params }) => {
+import { TProductId } from "@/types";
+
+const SingleProduct = async ({ params }: TProductId) => {
   const res = await fetch(
     `http://localhost:5000/api/v1/products/${params.productId}`,
     {
@@ -20,7 +17,7 @@ const SingleProduct = async ({ params }) => {
     }
   );
   const products = await res.json();
-  console.log(products);
+
 
   return (
     <Container className="mt-10">

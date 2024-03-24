@@ -28,3 +28,10 @@ export type TContainer = {
   flashSale :boolean
   
   }
+
+  export type TProductId = {
+    params: {
+      productId:string,
+      product:any
+    }
+  }
