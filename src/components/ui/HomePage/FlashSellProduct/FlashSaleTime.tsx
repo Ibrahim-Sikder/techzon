@@ -31,7 +31,7 @@ const FlashSaleTime = () => {
   };
 
   return (
-    <div className="flex-wrap flex items-center mb-10">
+    <div className="flex-wrap flex items-center">
       <h3 className="text-2xl font-semibold">Flash Sale</h3>
       {endTime && (
         <span className="ml-10">
@@ -51,12 +51,7 @@ const FlashSaleTime = () => {
 
         </span>
       )}
-      <Link href="/flash-sale">
-        <div className="flex items-center ml-8 bg-[#2251CF] text-white  px-3 py-2 rounded-sm ">
-          <button>See All</button>{" "}
-          <HiOutlineArrowNarrowRight size={20} />
-        </div>
-      </Link>
+     
     </div>
   );
 };

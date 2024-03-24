@@ -1,12 +1,11 @@
 "use client";
 
-
 import "keen-slider/keen-slider.min.css";
-import slider from '../../assets/images/headphone.png'
-import slider2 from '../../assets/images/headphone2.png'
-import slider3 from '../../assets/images/headphone3.png'
-import slider4 from '../../assets/images/headphone5.png'
-import slider5 from '../../assets/images/headphone6.png'
+import slider from "../../assets/images/headphone.png";
+import slider2 from "../../assets/images/headphone2.png";
+import slider3 from "../../assets/images/headphone3.png";
+import slider4 from "../../assets/images/headphone5.png";
+import slider5 from "../../assets/images/headphone6.png";
 import Image from "next/image";
 
 import React, { MutableRefObject } from "react";
@@ -16,7 +15,6 @@ import {
   KeenSliderPlugin,
   KeenSliderInstance,
 } from "keen-slider/react";
-
 
 function ThumbnailPlugin(
   mainRef: MutableRefObject<KeenSliderInstance | null>
@@ -53,7 +51,7 @@ function ThumbnailPlugin(
   };
 }
 
-export default function SinglePageSlider() {
+export default function SinglePageSlider({ product }) {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
   });
@@ -72,40 +70,88 @@ export default function SinglePageSlider() {
     <>
       <div ref={sliderRef} className="keen-slider">
         <div className="keen-slider__slide number-slide1">
-          <Image src={slider} alt="slider" width="500" height="500" />
+          <Image
+            src={product.data.image}
+            alt="slider"
+            width="500"
+            height="500"
+          />
         </div>
         <div className="keen-slider__slide number-slide2">
-          <Image src={slider2} alt="slider" width="500" height="500" />
+          <Image
+            src={product.data.image}
+            alt="slider"
+            width="500"
+            height="500"
+          />
         </div>
         <div className="keen-slider__slide number-slide3">
-          <Image src={slider3} alt="slider" width="500" height="500" />
+          <Image
+            src={product.data.image}
+            alt="slider"
+            width="500"
+            height="500"
+          />
         </div>
         <div className="keen-slider__slide number-slide4">
-          <Image src={slider} alt="slider4" width="500" height="500" />
+          <Image
+            src={product.data.image}
+            alt="slider4"
+            width="500"
+            height="500"
+          />
         </div>
         <div className="keen-slider__slide number-slide5">
-          <Image src={slider5} alt="slider" width="500" height="500" />
+          <Image
+            src={product.data.image}
+            alt="slider"
+            width="500"
+            height="500"
+          />
         </div>
-       
       </div>
 
       <div ref={thumbnailRef} className="keen-slider thumbnail">
         <div className="keen-slider__slide number-slide1">
-        <Image src={slider} alt="slider" width="500" height="500" /> 
+          <Image
+            src={product.data.image}
+            alt="slider"
+            width="500"
+            height="500"
+          />
         </div>
         <div className="keen-slider__slide number-slide2">
-        <Image src={slider2} alt="slider" width="500" height="500" />
+          <Image
+            src={product.data.image}
+            alt="slider"
+            width="500"
+            height="500"
+          />
         </div>
         <div className="keen-slider__slide number-slide3">
-        <Image src={slider3} alt="slider" width="500" height="500" />
+          <Image
+            src={product.data.image}
+            alt="slider"
+            width="500"
+            height="500"
+          />
         </div>
         <div className="keen-slider__slide number-slide4">
-        <Image src={slider} alt="slider4" width="500" height="500" />
+          <Image
+            src={product.data.image}
+            alt="slider4"
+            width="500"
+            height="500"
+          />
         </div>
         <div className="keen-slider__slide number-slide5">
-        <Image src={slider} alt="slider4" width="500" height="500" />
+          <Image
+            src={product.data.image}
+            alt="slider4"
+            width="500"
+            height="500"
+          />
         </div>
-       
       </div>
     </>
   );

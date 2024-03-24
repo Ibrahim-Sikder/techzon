@@ -10,6 +10,7 @@ import Container from "../../Container";
 import "./ExploreCategories.css";
 import { TProduct } from "@/types";
 import Link from "next/link";
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 const ExploreCategories = async () => {
   const res = await fetch("http://localhost:5000/api/v1/products", {
     next: {
@@ -24,15 +25,15 @@ const ExploreCategories = async () => {
 
       <div className="lg:grid-cols-4 grid xl:grid-cols-6 gap-5 mt-10 text-center grid-cols-1 md:grid-cols-3 place-items-center  ">
         {products?.data?.slice(0, 6).map((data: TProduct) => (
-          <div key={data._id} className="categoryContainer">
+         <Link href={`/products?categories=${encodeURIComponent(
+          data.categories
+        )}`}>
+           <div key={data._id} className="categoryContainer">
             <Image src={data.image} width="500" height="500" alt="categories" />
             <h3 className="text-xl font-semibold mt-3"> {data.categories} </h3>
-            <Link
-              href={`/products?categories=${encodeURIComponent(data.categories)}`}
-            >
-              <button>See All</button>
-            </Link>
+           
           </div>
+         </Link>
         ))}
       </div>
     </Container>

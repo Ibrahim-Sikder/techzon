@@ -5,7 +5,18 @@ import { HiChevronRight, HiStar } from "react-icons/hi";
 import TZSelect from "@/components/ui/TZSelect/TZSelect";
 import "../product.css";
 import AddProductBtn from "@/components/ui/AddproductBtn/AddProductBtn";
-const SingleProduct = () => {
+const SingleProduct = async ({ params }) => {
+  const res = await fetch(
+    `http://localhost:5000/api/v1/products/${params.productId}`,
+    {
+      next: {
+        revalidate: 30,
+      },
+    }
+  );
+  const products = await res.json();
+  console.log(products);
+
   return (
     <Container className="mt-10">
       <div className="gap-3 flex-wrap flex items-center space-x-3">
@@ -23,12 +34,12 @@ const SingleProduct = () => {
       </div>
       <div className="flex-wrap xl:flex-nowrap flex items-center gap-14">
         <div className="xl:w-[50%] overflow-hidden w-full ">
-          <SinglePageSlider />
+          <SinglePageSlider product={products}/>
         </div>
         <div className="border-b border-[#ddd]">
           <small>Headphones</small>
           <h3 className="text-2xl font-semibold my-3">
-            Headphones Ultra Wireless S50 Headphones S50 with Bluetooth
+            {products?.data?.name}
           </h3>
           <div className="flex items-center text-sm ">
             <div className="flex items-center ">
@@ -38,7 +49,7 @@ const SingleProduct = () => {
               <HiStar size={20} className=" startIcon" />
               <HiStar size={20} className=" startIcon" />
             </div>
-            <small> (3 customer reviews)</small>
+            <small> (3 customer reviews){products.data.review}</small>
           </div>
           <div className="mt-3 text-sm featureItem  text-[#7c7c7c]">
             <ul className="space-y-2">
@@ -49,13 +60,11 @@ const SingleProduct = () => {
             </ul>
           </div>
           <p className=" text-[#7c7c7c] my-5">
-            "Experience wireless freedom with Ultra Wireless S50 Headphones.
-            Enjoy seamless Bluetooth connectivity and immersive sound. Elevate
-            your audio experience today!"
+           {products.data.description} 
           </p>
           <span className="my-5 block">SKU: FW511948218</span>
           <div className="flex items-">
-            <span className="text-5xl">$1,999.00</span>{" "}
+            <span className="text-5xl">${products.data.price}</span>{" "}
             <del className="text-xl">$2,299.00</del>
           </div>
           <hr className="my-5" />
