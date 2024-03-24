@@ -15,15 +15,13 @@ import Image from "next/image";
 import { HiMinus, HiOutlineEye, HiOutlineHeart, HiOutlineShoppingCart, HiStar } from "react-icons/hi";
 
 
-type TProduct = {
-  name:stirng,
-  
-}
+
 
 
 import ProductCard from "@/components/ProductCard/ProductCard";
 import Link from "next/link";
 import ProductIcons from "@/components/ui/HomePage/FlashSellProduct/ProductIcons";
+import { TProduct } from "@/types";
 const ProductPage = async () => {
   const res = await fetch('http://localhost:5000/api/v1/products',{
     next:{
@@ -32,57 +30,6 @@ const ProductPage = async () => {
   })
   const products = await  res.json()
  
-
-  const flashData = [
-    {
-      id: 1,
-      name: "Head Phone",
-      price: 13999,
-      img: flash,
-    },
-    {
-      id: 1,
-      name: "Head Phone",
-      price: 13999,
-      img: flash2,
-    },
-    {
-      id: 1,
-      name: "Head Phone",
-      price: 13999,
-      img: flash3,
-    },
-    {
-      id: 1,
-      name: "Head Phone",
-      price: 13999,
-      img: flash4,
-    },
-    {
-      id: 1,
-      name: "Head Phone",
-      price: 13999,
-      img: flash5,
-    },
-    {
-      id: 1,
-      name: "Head Phone",
-      price: 13999,
-      img: flash6,
-    },
-    {
-      id: 1,
-      name: "Head Phone",
-      price: 13999,
-      img: flash7,
-    },
-    {
-      id: 1,
-      name: "Head Phone",
-      price: 13999,
-      img: flash8,
-    },
-  ];
 
  
   return (
@@ -94,8 +41,8 @@ const ProductPage = async () => {
         <div className="col-span-10">
          <Link href={`/products/id`}>
          <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid  gap-10 place-content-center place-items-center">
-            {products.data?.map((data) => (
-              <div key={data.id} className="flashSellProductWrap productsCard">
+            {products.data?.map((data:TProduct) => (
+              <div key={data._id} className="flashSellProductWrap productsCard">
                 <div className="flashContent">
                   <Image width="500" height="500" src={data.image} alt="flash" />
                   <div>
@@ -113,14 +60,7 @@ const ProductPage = async () => {
                       <b className="text-[#2251CF] ml-2">৳58999</b>
                     </div>
                   </div>
-                  {/* <div className="iconWraps space-y-4">
-                    <HiOutlineEye className=" startIcon startIcon2" size={30} />
-                    <HiOutlineHeart
-                      className=" startIcon  startIcon2"
-                      size={30}
-                    />
-                    <HiOutlineEye className=" startIcon startIcon2" size={30} />
-                  </div> */}
+                  
                 </div>
                 <div className="iconWraps space-y-4">
               <ProductIcons/>

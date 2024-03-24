@@ -9,6 +9,11 @@ import flash7 from "../../../../../src/assets/images/flash8.png";
 import flash8 from "../../../../../src/assets/images/flash7.png";
 import Image from "next/image";
 
+
+
+
+
+
 import Container from "../../Container";
 import {
   HiMinus,
@@ -22,63 +27,22 @@ import {
 } from "react-icons/hi";
 import ProductIcons from "./ProductIcons";
 import Link from "next/link";
-const FlashSellProduct = () => {
+import { TFlashSale } from "@/types";
+const FlashSellProduct = async () => {
 
+  const res = await fetch('http://localhost:5000/api/v1/flash-sale',{
+    next:{
+      revalidate: 30
+    }
+  })
+  const flashData = await  res.json()
+ 
 
-  const flashData = [
-    {
-      id: 1,
-      name: "Head Phone",
-      price: 13999,
-      img: flash,
-    },
-    {
-      id: 1,
-      name: "Head Phone",
-      price: 13999,
-      img: flash2,
-    },
-    {
-      id: 1,
-      name: "Head Phone",
-      price: 13999,
-      img: flash3,
-    },
-    {
-      id: 1,
-      name: "Head Phone",
-      price: 13999,
-      img: flash4,
-    },
-    {
-      id: 1,
-      name: "Head Phone",
-      price: 13999,
-      img: flash5,
-    },
-    {
-      id: 1,
-      name: "Head Phone",
-      price: 13999,
-      img: flash6,
-    },
-    {
-      id: 1,
-      name: "Head Phone",
-      price: 13999,
-      img: flash7,
-    },
-    {
-      id: 1,
-      name: "Head Phone",
-      price: 13999,
-      img: flash8,
-    },
-  ];
+ 
   return (
     <Container className="sectionMargin">
      <div className="flex-wrap flex items-center mb-10 ">
-     <h3 className="text-2xl font-semibold">Deals Of The Day </h3>
+     <h3 className="text-2xl font-semibold">Flash Sale </h3>
       <span className="ml-10">Ends after: <span className=" bg-[#F14705] text-white px-3 py-1 ">05h: 13m: 47s</span></span>
 
     <Link href='/flash-sale'>
@@ -87,11 +51,14 @@ const FlashSellProduct = () => {
      </div>
     </Link>
      </div>
-      <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid xl:grid-cols-4 gap-10 place-content-center place-items-center">
-        {flashData?.map((data) => (
-          <div key={data.id} className="flashSellProductWrap">
-            <div className="flashContent">
-              <Image width="500" height="500" src={data.img} alt="flash" />
+     {flashData.data.flashSaleProductsTrue && flashData.data.flashSaleProductsTrue.length > 0 ? (
+        <>
+          <p>Showing 1-{flashData.data.flashSaleProductsTrue.length} of {flashData.data.flashSaleProductsTrue.length + flashData.data.flashSaleProductsFalse.length} item(s) with flash sale</p>
+          <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid xl:grid-cols-4 gap-10 place-content-center place-items-center">
+            {flashData.data.flashSaleProductsTrue.slice(0,4).map((data: TFlashSale) => (
+              <div key={data._id} className="flashSellProductWrap">
+                 <div className="flashContent">
+              <Image width="500" height="500" src={data.image} alt="flash" />
               <div>
                 <p className="flashCartName">{data.name}</p>
                 <button className="flashCartBtn ">Add To Cart</button>
@@ -107,17 +74,21 @@ const FlashSellProduct = () => {
                   <b className="text-[#2251CF] ml-2">৳58999</b>
                 </div>
               </div>
-             
-            </div>
-            <div className="iconWraps space-y-4">
-              <ProductIcons/>
+              <div className="iconWraps space-y-4">
+                <HiOutlineEye className=" startIcon startIcon2" size={30} />
                 <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
-                <HiOutlineShoppingCart className=" startIcon startIcon2" size={30} />
-               
+                <HiOutlineEye className=" startIcon startIcon2" size={30} />
               </div>
+            </div>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      ) : (
+        <p>No flash sale products available</p>
+      )}
+      
+      
     </Container>
   );
 };
