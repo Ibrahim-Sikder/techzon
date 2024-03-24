@@ -1,7 +1,7 @@
 "use client";
 
 import "./register.css";
-import google from "../../../src/assets/images/google.png";
+import google from "../../../assets/images/google.png";
 import Link from "next/link";
 import { Input } from "@nextui-org/react";
 import Image from "next/image";

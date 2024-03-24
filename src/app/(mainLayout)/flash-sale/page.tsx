@@ -70,42 +70,7 @@ return (
         <p>No flash sale products available</p>
       )}
       
-      {flashData.data.flashSaleProductsFalse && flashData.data.flashSaleProductsFalse.length > 0 ? (
-        <>
-          <p>Showing 1-{flashData.data.flashSaleProductsFalse.length} of {flashData.data.flashSaleProductsFalse.length} item(s) without flash sale</p>
-          <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid xl:grid-cols-4 gap-10 place-content-center place-items-center">
-            {flashData.data.flashSaleProductsFalse.map((data: TFlashSale) => (
-              <div key={data._id} className="flashSellProductWrap">
-             <div className="flashContent">
-              <Image width="500" height="500" src={data.image} alt="flash" />
-              <div>
-                <p className="flashCartName">{data.name}</p>
-                <button className="flashCartBtn ">Add To Cart</button>
-                <div className="flex items-center ">
-                  <HiStar size={25} className=" startIcon" />
-                  <HiStar size={25} className=" startIcon" />
-                  <HiStar size={25} className=" startIcon" />
-                  <HiStar size={25} className=" startIcon" />
-                  <HiStar size={25} className=" startIcon" />
-                </div>
-                <div className="flex items-center  my-2">
-                  <del className="mr-2"> ৳484848</del> <HiMinus />
-                  <b className="text-[#2251CF] ml-2">৳58999</b>
-                </div>
-              </div>
-              <div className="iconWraps space-y-4">
-                <HiOutlineEye className=" startIcon startIcon2" size={30} />
-                <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
-                <HiOutlineEye className=" startIcon startIcon2" size={30} />
-              </div>
-            </div>
-              </div>
-            ))}
-          </div>
-        </>
-      ) : (
-        <p>No flash sale products available</p>
-      )}
+     
     </div>
   </Container>
 );

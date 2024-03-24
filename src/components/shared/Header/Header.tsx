@@ -76,12 +76,13 @@ const Header = () => {
             <HiOutlineX onClick={handleToggle} size={35} className='cursor-pointer'/>
            </div>
               <ul className='space-y-3'>
-                <li>Home</li>
-                <li>Categories</li>
-                <li>Products</li>
-                <li>Flash Sale</li>
-                <li>About Us</li>
-                <li>Contact Us</li>
+                <li><Link href='/'>Home</Link> </li>
+                <li><Link href='/'>Categories</Link> </li>
+                <li><Link href='/products'>Products</Link> </li>
+                <li><Link href='/flash-sale'>Flash Sale</Link> </li>
+                <li><Link href='/about-us'>About Us</Link> </li>
+                <li><Link href='/contact-us'>Contact Us</Link> </li>
+                <li><Link href='/login'>Login</Link> </li>
               </ul>
             </nav>
 

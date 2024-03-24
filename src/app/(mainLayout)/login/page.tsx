@@ -3,6 +3,7 @@ import { FaFacebookF } from "react-icons/fa6";
 import { Input } from '@nextui-org/react';
 import Image from 'next/image';
 import '../register/register.css'
+import Link from 'next/link';
 const Login = () => {
     return (
         <div>
@@ -10,7 +11,7 @@ const Login = () => {
                 <div className="text-center">
                     <h3 className="text-3xl font-bold text-center mb-5  capitalize">Hello</h3>
                     <span>
-                        Sign In TechZon or <b className="border-b-2 border-[#00AB55]">create an account </b>
+                        Sign In TechZon or <Link href='/register'><b className="border-b-2 border-[#00AB55]">Create an account </b></Link>
                     </span>
                 </div>
                 <form className="businessFormWrap">
@@ -19,7 +20,7 @@ const Login = () => {
                             label="Email or Username " type="text" />
 
                     </div>
-                    <button className="signupBtn loginBtn bg-[#00AB55] text-white businessBtn">Continoue </button>
+                    <button className="signupBtn loginBtn bg-[#00AB55] text-white businessBtn">Continuo </button>
                     <div className="flex flex-col my-3 w-[320px] border-opacity-50">
                         <div className="divider">OR</div>
                     </div>
@@ -30,12 +31,12 @@ const Login = () => {
                                 alt='google'
                                 width='50'
                                 height='50'
-                            /> <span>Continoue With Google </span>{' '}
+                            /> <span>Continuo With Google </span>{' '}
                         </button>
                         <button 
                       
                         className="signupBtn loginBtn bg-[#3F63AB] text-white ">
-                            <FaFacebookF className="mr-5" size={25} /> <span>Continoue With Facebook </span>{' '}
+                            <FaFacebookF className="mr-5" size={25} /> <span>Continuo With Facebook </span>{' '}
                         </button>
                     </div>
                     <div className="text-center w-[300px] mx-auto  mt-3">
