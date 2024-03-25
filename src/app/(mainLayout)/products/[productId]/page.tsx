@@ -9,7 +9,7 @@ import { TProductId } from "@/types";
 
 const SingleProduct = async ({ params }: TProductId) => {
   const res = await fetch(
-    `http://localhost:5000/api/v1/products/${params.productId}`,
+    `https://techzon-server.vercel.app/api/v1/products/${params.productId}`,
     {
       next: {
         revalidate: 30,

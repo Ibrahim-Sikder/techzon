@@ -32,7 +32,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ### Client side url link:
 
-### Server side url link:
+### Server side url link:https://techzon-server.vercel.app/
 
 #### Video url link:https://www.awesomescreenshot.com/video/26122658?key=ec01f80d9a36cde93ff1df16f123f2e3
 

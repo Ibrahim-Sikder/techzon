@@ -27,7 +27,7 @@ const ProductPage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/v1/products");
+        const res = await fetch("https://techzon-server.vercel.app/api/v1/products");
         const data = await res.json();
         setProducts(data.data || []);
 

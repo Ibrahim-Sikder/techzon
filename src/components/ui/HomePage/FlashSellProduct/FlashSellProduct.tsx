@@ -15,7 +15,7 @@ import FlashSaleTime from "./FlashSaleTime";
 import TopRatedIcons from "../TopRatedProduct/TopRatedIcons";
 
 const FlashSellProduct = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/flash-sale", {
+  const res = await fetch("https://techzon-server.vercel.app/api/v1/flash-sale", {
     next: {
       revalidate: 30,
     },
