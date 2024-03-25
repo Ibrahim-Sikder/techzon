@@ -10,7 +10,7 @@ import {
   KeenSliderPlugin,
   KeenSliderInstance,
 } from "keen-slider/react";
-import { TProductId } from "@/types";
+
 
 
 interface SinglePageSliderProps {
@@ -76,7 +76,6 @@ export default function SinglePageSlider({ product }:SinglePageSliderProps) {
     },
     [ThumbnailPlugin(instanceRef)]
   );
-  console.log(product.data)
 
   return (
     <>

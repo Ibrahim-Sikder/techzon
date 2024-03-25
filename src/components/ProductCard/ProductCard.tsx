@@ -7,6 +7,7 @@ const ProductCard = () => {
   const onChange: CheckboxProps["onChange"] = (e) => {
     console.log(`checked = ${e.target.checked}`);
   };
+  
 
   return (
     <div>
