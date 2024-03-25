@@ -1,16 +1,9 @@
 import React from "react";
-import explore from "../../../../assets/images/explore.png";
-import explore2 from "../../../../assets/images/explore2.png";
-import explore3 from "../../../../assets/images/explore3.png";
-import explore4 from "../../../../assets/images/explore4.png";
-import explore5 from "../../../../assets/images/explore5.png";
-import explore6 from "../../../../assets/images/explore6.png";
 import Image from "next/image";
 import Container from "../../Container";
 import "./ExploreCategories.css";
 import { TProduct } from "@/types";
 import Link from "next/link";
-import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 const ExploreCategories = async () => {
   const res = await fetch("http://localhost:5000/api/v1/products", {
     next: {

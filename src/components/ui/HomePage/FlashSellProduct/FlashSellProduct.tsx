@@ -12,6 +12,7 @@ import {
 import Link from "next/link";
 import { TFlashSale } from "@/types";
 import FlashSaleTime from "./FlashSaleTime";
+import TopRatedIcons from "../TopRatedProduct/TopRatedIcons";
 
 const FlashSellProduct = async () => {
   const res = await fetch("http://localhost:5000/api/v1/flash-sale", {
@@ -64,7 +65,7 @@ const FlashSellProduct = async () => {
                   </div>
                 </div>
                 <div className="iconWraps space-y-4">
-                  <HiOutlineEye className="startIcon startIcon2" size={30} />
+                <TopRatedIcons/>
                   <HiOutlineHeart className="startIcon startIcon2" size={30} />
                   <HiOutlineEye className="startIcon startIcon2" size={30} />
                 </div>

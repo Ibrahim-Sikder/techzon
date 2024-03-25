@@ -8,14 +8,8 @@ import TZSelect from "../../TZSelect/TZSelect";
 import AddProductBtn from "../../AddproductBtn/AddProductBtn";
 import '../FlashSellProduct/FlashSellProduct.css'
 import Link from "next/link";
-
-
-// interface Product {
-//   data: {
-//     name: string;
-//     image: string;
-//   };
-// }
+import laptop from '../../../../assets/images/explore6.png'
+import TopRatedModalSlide from "./TopRatedModalSlide";
 
 interface ProductModalProps {
   onClose: () => void;
@@ -60,9 +54,10 @@ const TopRatedModal: React.FC<ProductModalProps> = async({ onClose }) =>  {
         <HiChevronRight />
         <small>Ultra Wireless S50 Headphones S50 with Bluetooth</small>
       </div>
-      <div className="flex-wrap xl:flex-nowrap flex items-center gap-14">
+      <div className="flex-wrap xl:flex-nowrap flex items-cen
+      ter gap-14">
         <div className="xl:w-[50%] overflow-hidden w-full ">
-          <SinglePageSlider product={product} />
+          <TopRatedModalSlide/>
         </div>
         <div className="border-b border-[#ddd]">
           <small>Headphones</small>

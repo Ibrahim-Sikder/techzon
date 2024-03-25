@@ -2,17 +2,44 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Locally run this project
+# client side : npm run dev
+# server side : npm run start
+
+### Technology:
+ ## Frontend
+  # React js, TypeScript, Tailwind css, ANTdesign, NextUI , .
+
+## Backend
+ # Node js, Express js, TypeScript, Joi , Mongoose,
+
+## Database
+ # MongoDB
+
+## Animation
+ # Framer Motion 
+
+### Feature:
+ ## Flash sale offer
+ ## Filtering 
+ ## Dashboard
+ # Single details page for products.
+ # User can see offer flash sale product.
+ # User can choose best categories from all products.
+ # User see top rating products.
+## Full mobile first responsive UI design in Fixel perfect.
+
+### Client side url link:
+
+### Server side url link:
+
+#### Video url link:https://www.awesomescreenshot.com/video/26122658?key=ec01f80d9a36cde93ff1df16f123f2e3
+
+
+
+
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

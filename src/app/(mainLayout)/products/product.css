@@ -23,6 +23,8 @@
         width:340px;
         height:350px;
     }
+    .addToCartBtn {
+        width: 120px;}
 }
 
 @media only screen and (max-width:500px){

@@ -10,11 +10,9 @@ interface Product {
     // Add other properties as needed
 }
 
-interface TopRatedIconsProps {
-    product: Product;
-}
 
-const TopRatedIcons: React.FC<TopRatedIconsProps> = ({ product }) => {
+
+const TopRatedIcons= () => {
     const [open, setOpen] = useState(false);
 
     const handleOpen = () => setOpen(true);

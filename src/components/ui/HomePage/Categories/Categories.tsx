@@ -12,6 +12,7 @@ import Image from "next/image";
 import ProductIcons from "../FlashSellProduct/ProductIcons";
 import CategoryIcons from "./CategoryIcons";
 import Link from "next/link";
+import TopRatedIcons from "../TopRatedProduct/TopRatedIcons";
 const Categories = () => {
   return (
     <Container className="sectionMargin">
@@ -36,14 +37,9 @@ const Categories = () => {
                   <b className="text-[#2251CF] ml-2">৳58999</b>
                 </div>
               </div>
-              {/* <div className="iconWraps space-y-4">
-                <HiOutlineEye className=" startIcon startIcon2" size={30} />
-                <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
-                <HiOutlineEye className=" startIcon startIcon2" size={30} />
-              </div> */}
             </div>
             <div className="iconWraps space-y-4">
-              <CategoryIcons/>
+            <TopRatedIcons/>
                 <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
                 <HiOutlineShoppingCart className=" startIcon startIcon2" size={30} />
                
@@ -67,14 +63,9 @@ const Categories = () => {
                   <b className="text-[#2251CF] ml-2">৳58999</b>
                 </div>
               </div>
-              {/* <div className="iconWraps space-y-4">
-                <HiOutlineEye className=" startIcon startIcon2" size={30} />
-                <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
-                <HiOutlineEye className=" startIcon startIcon2" size={30} />
-              </div> */}
             </div>
             <div className="iconWraps space-y-4">
-            <CategoryIcons/>
+            <TopRatedIcons/>
                 <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
                 <HiOutlineShoppingCart className=" startIcon startIcon2" size={30} />
                
@@ -101,14 +92,9 @@ const Categories = () => {
                 <b className="text-[#2251CF] ml-2">৳58999</b>
               </div>
             </div>
-            {/* <div className="iconWraps space-y-4">
-              <HiOutlineEye className=" startIcon startIcon2" size={30} />
-              <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
-              <HiOutlineEye className=" startIcon startIcon2" size={30} />
-            </div> */}
           </div>
           <div className="iconWraps space-y-4">
-          <CategoryIcons/>
+          <TopRatedIcons/>
                 <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
                 <HiOutlineShoppingCart className=" startIcon startIcon2" size={30} />
                
@@ -134,7 +120,7 @@ const Categories = () => {
                 </div>
               </div>
               <div className="iconWraps space-y-4">
-                <HiOutlineEye className=" startIcon startIcon2" size={30} />
+              <TopRatedIcons/>
                 <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
                 <HiOutlineEye className=" startIcon startIcon2" size={30} />
               </div>
@@ -159,14 +145,9 @@ const Categories = () => {
                   <b className="text-[#2251CF] ml-2">৳58999</b>
                 </div>
               </div>
-              {/* <div className="iconWraps space-y-4">
-                <HiOutlineEye className=" startIcon startIcon2" size={30} />
-                <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
-                <HiOutlineEye className=" startIcon startIcon2" size={30} />
-              </div> */}
             </div>
             <div className="iconWraps space-y-4">
-            <CategoryIcons/>
+            <TopRatedIcons/>
                 <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
                 <HiOutlineShoppingCart className=" startIcon startIcon2" size={30} />
                

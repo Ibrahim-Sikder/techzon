@@ -64,7 +64,7 @@ const TopRatedProduct = async () => {
               </div>
             </div>
             <div className="iconWraps space-y-4">
-              <TopRatedIcons product={products} />
+              <TopRatedIcons />
               <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
               <HiOutlineShoppingCart
                 className=" startIcon startIcon2"
