@@ -69,7 +69,7 @@ const ProductPage = async () => {
                 </div>
 
                 <div className="iconWraps space-y-4">
-                  <ProductIcons />
+                  <ProductIcons product={products}/>
                   <HiOutlineHeart
                     className=" startIcon  startIcon2"
                     size={30}

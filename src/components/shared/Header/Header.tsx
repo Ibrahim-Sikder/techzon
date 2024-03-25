@@ -48,7 +48,7 @@ const Header = () => {
 
               <div className="flex items-center space-x-3 loginbtn">
                 <div className="onlinShopping">
-                  <Link href='/my-account'> <BsPerson className='personIcon' /></Link>
+                  <Link href='/login'> <BsPerson className='personIcon' /></Link>
                 </div>
                 <div className='flex items-center ml-3 loginbtn'>
 

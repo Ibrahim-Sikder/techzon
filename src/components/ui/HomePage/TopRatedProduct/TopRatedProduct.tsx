@@ -13,6 +13,7 @@ import {
 } from "react-icons/hi";
 import ProductIcons from "../FlashSellProduct/ProductIcons";
 import { TProduct } from "@/types";
+import TopRatedIcons from "./TopRatedIcons";
 
 const TopRatedProduct = async () => {
   const res = await fetch("http://localhost:5000/api/v1/products", {
@@ -62,7 +63,7 @@ const TopRatedProduct = async () => {
               </div>
             </div>
             <div className="iconWraps space-y-4">
-              <ProductIcons />
+              <TopRatedIcons product={products}/>
               <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
               <HiOutlineShoppingCart
                 className=" startIcon startIcon2"

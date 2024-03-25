@@ -17,7 +17,7 @@ const SingleProduct = async ({ params }: TProductId) => {
     }
   );
   const products = await res.json();
-
+console.log(products)
 
   return (
     <Container className="mt-10">

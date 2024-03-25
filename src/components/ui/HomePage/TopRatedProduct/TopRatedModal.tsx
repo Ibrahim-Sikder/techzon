@@ -6,23 +6,30 @@ import { IoCloseSharp } from "react-icons/io5";
 import Container from "../../Container";
 import TZSelect from "../../TZSelect/TZSelect";
 import AddProductBtn from "../../AddproductBtn/AddProductBtn";
-import './FlashSellProduct.css'
+import '../FlashSellProduct/FlashSellProduct.css'
 
 
-interface Product {
-  data: {
-    name: string;
-    image: string;
-  };
-}
+// interface Product {
+//   data: {
+//     name: string;
+//     image: string;
+//   };
+// }
 
 interface ProductModalProps {
   onClose: () => void;
-  product: Product;
 }
 
-const ProductModal: React.FC<ProductModalProps> = ({ onClose, product }) =>  {
-  console.log(product)
+const TopRatedModal: React.FC<ProductModalProps> = async({ onClose }) =>  {
+
+    const res = await fetch("http://localhost:5000/api/v1/products", {
+        next: {
+          revalidate: 30,
+        },
+      });
+      const product = await res.json();
+    
+
 
 
   return (
@@ -113,4 +120,4 @@ const ProductModal: React.FC<ProductModalProps> = ({ onClose, product }) =>  {
   );
 };
 
-export default ProductModal;
+export default TopRatedModal;

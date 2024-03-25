@@ -10,6 +10,7 @@ import categories5 from "../../../../assets/images/categories3.png";
 import { HiMinus, HiOutlineEye, HiOutlineHeart, HiOutlineShoppingCart, HiStar } from "react-icons/hi";
 import Image from "next/image";
 import ProductIcons from "../FlashSellProduct/ProductIcons";
+import CategoryIcons from "./CategoryIcons";
 const Categories = () => {
   return (
     <Container className="sectionMargin">
@@ -41,7 +42,7 @@ const Categories = () => {
               </div> */}
             </div>
             <div className="iconWraps space-y-4">
-              <ProductIcons/>
+              <CategoryIcons/>
                 <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
                 <HiOutlineShoppingCart className=" startIcon startIcon2" size={30} />
                
@@ -72,7 +73,7 @@ const Categories = () => {
               </div> */}
             </div>
             <div className="iconWraps space-y-4">
-              <ProductIcons/>
+            <CategoryIcons/>
                 <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
                 <HiOutlineShoppingCart className=" startIcon startIcon2" size={30} />
                
@@ -106,7 +107,7 @@ const Categories = () => {
             </div> */}
           </div>
           <div className="iconWraps space-y-4">
-              <ProductIcons/>
+          <CategoryIcons/>
                 <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
                 <HiOutlineShoppingCart className=" startIcon startIcon2" size={30} />
                
@@ -164,7 +165,7 @@ const Categories = () => {
               </div> */}
             </div>
             <div className="iconWraps space-y-4">
-              <ProductIcons/>
+            <CategoryIcons/>
                 <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
                 <HiOutlineShoppingCart className=" startIcon startIcon2" size={30} />
                

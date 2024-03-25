@@ -17,9 +17,9 @@ interface SinglePageSliderProps {
   product: {
     data: {
       image: string;
-      // Add other properties as needed
+
     };
-    // Add other properties as needed
+
   };
 }
 
@@ -60,6 +60,9 @@ function ThumbnailPlugin(
 }
 
 export default function SinglePageSlider({ product }:SinglePageSliderProps) {
+  if (!product || !product.data) {
+    return null; // or handle the case when product or product.data is undefined
+  }
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
   });
@@ -73,10 +76,12 @@ export default function SinglePageSlider({ product }:SinglePageSliderProps) {
     },
     [ThumbnailPlugin(instanceRef)]
   );
+  console.log(product.data)
 
   return (
     <>
       <div ref={sliderRef} className="keen-slider">
+
         <div className="keen-slider__slide number-slide1">
           <Image
             src={product.data.image}

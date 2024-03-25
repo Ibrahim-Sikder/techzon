@@ -14,14 +14,7 @@ const Register = () => {
         <h3 className="mb-5 text-3xl font-bold text-center capitalize">
           Create a TechZon Account{" "}
         </h3>
-        <div className="flex lg:justify-end md:justify-center">
-          <Link href="/register">
-            <span>
-              Create a{" "}
-              <b className="border-b-2 border-[#2251CF]">business account</b>{" "}
-            </span>
-          </Link>
-        </div>
+       
         <div className="SignupFormWrap">
           <div>
             <div className="flex items-center">
