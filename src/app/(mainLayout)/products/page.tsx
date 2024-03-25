@@ -1,5 +1,4 @@
-
-'use client'
+"use client";
 
 import React, { useEffect, useState } from "react";
 import Container from "@/components/ui/Container";
@@ -22,12 +21,16 @@ const ProductPage = () => {
   const [priceRange, setPriceRange] = useState<number[]>([]);
   const [brands, setBrands] = useState<string[]>([]);
   const [reviews, setreviews] = useState<number[]>([]);
-  const [selectedFilters, setSelectedFilters] = useState<{ [key: string]: string | number }>({});
+  const [selectedFilters, setSelectedFilters] = useState<{
+    [key: string]: string | number;
+  }>({});
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch("https://techzon-server.vercel.app/api/v1/products");
+        const res = await fetch(
+          "https://techzon-server.vercel.app/api/v1/products"
+        );
         const data = await res.json();
         setProducts(data.data || []);
 
@@ -53,33 +56,29 @@ const ProductPage = () => {
   }, []);
 
   const handleCheckboxChange = (value: string | number, filterType: string) => {
-    // Create a copy of the selected filters
     const updatedFilters = { ...selectedFilters };
 
-    // Check if the same filter is clicked again
     const isSameFilterClicked = updatedFilters[filterType] === value;
 
-    // If the same filter is clicked again, reset the filter
     if (isSameFilterClicked) {
       delete updatedFilters[filterType];
     } else {
-      // Otherwise, update the selected filter
+
       updatedFilters[filterType] = value;
     }
 
-    // Update the state of selected filters
     setSelectedFilters(updatedFilters);
 
-    // Filter the products based on the selected filters
     let filteredProducts = [...products];
     Object.entries(updatedFilters).forEach(([type, value]) => {
-      if (typeof type === 'string' && type in products[0]) {
-        filteredProducts = filteredProducts.filter((product) => product[type as keyof TProduct] === value);
+      if (typeof type === "string" && type in products[0]) {
+        filteredProducts = filteredProducts.filter(
+          (product) => product[type as keyof TProduct] === value
+        );
       }
     });
-    
 
-    // Update the products state with filtered products
+
     setProducts(filteredProducts);
   };
 
@@ -164,9 +163,8 @@ const ProductPage = () => {
                   </Link>
                 </div>
                 <div className="iconWraps space-y-4">
-                {/* <ProductIcons product={data as unknown as TProduct} /> */}
-<TopRatedIcons/>
-
+                  {/* <ProductIcons product={data as unknown as TProduct} /> */}
+                  <TopRatedIcons />
 
                   <HiOutlineHeart
                     className=" startIcon  startIcon2"
