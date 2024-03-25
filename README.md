@@ -30,14 +30,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
  # User see top rating products.
 ## Full mobile first responsive UI design in Fixel perfect.
 
-### Client side url link:
 
-### Server side url link:https://techzon-server.vercel.app/
-
-#### Video url link:https://www.awesomescreenshot.com/video/26122658?key=ec01f80d9a36cde93ff1df16f123f2e3
-
-
-
+client side live link url: https://techzons.vercel.app/
+server side live url: https://techzon-server.vercel.app/
+Video url link:https://www.awesomescreen
 
 
 
