@@ -11,6 +11,7 @@ import { HiMinus, HiOutlineEye, HiOutlineHeart, HiOutlineShoppingCart, HiStar } 
 import Image from "next/image";
 import ProductIcons from "../FlashSellProduct/ProductIcons";
 import CategoryIcons from "./CategoryIcons";
+import Link from "next/link";
 const Categories = () => {
   return (
     <Container className="sectionMargin">
@@ -22,7 +23,7 @@ const Categories = () => {
               <Image width="500" height="500" src={categories3} alt="flash" />
               <div>
                 <p className="flashCartName">Categories </p>
-                <button className="flashCartBtn ">Add To Cart</button>
+               <Link href='/products'> <button className="flashCartBtn ">Add To Cart</button></Link>
                 <div className="flex items-center ">
                   <HiStar size={25} className=" startIcon" />
                   <HiStar size={25} className=" startIcon" />

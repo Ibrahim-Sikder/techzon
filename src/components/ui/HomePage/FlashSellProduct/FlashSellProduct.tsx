@@ -20,7 +20,7 @@ const FlashSellProduct = async () => {
     },
   });
   const flashData = await res.json();
-  console.log(flashData.data);
+
 
   if (!flashData || !flashData.data) {
     return <p>No flash sale products available</p>;
@@ -30,10 +30,10 @@ const FlashSellProduct = async () => {
 
   return (
     <Container className="sectionMargin">
-      <div className="flex items-center mb-10 ">
+      <div className="flex items-center mb-10 flex-wrap ">
         <FlashSaleTime />
         <Link href="/flash-sale">
-          <div className="flex items-center ml-8 bg-[#E8E8E8]  px-3 py-2 rounded-sm ">
+          <div className="flex items-center ml-0  lg:ml-8 bg-[#E8E8E8]  px-3 py-2 rounded-sm mt-3 ">
             <button>See All</button> <HiOutlineArrowNarrowRight size={20} />
           </div>
         </Link>
@@ -50,7 +50,7 @@ const FlashSellProduct = async () => {
                 <Image width="500" height="500" src={data.image} alt="flash" />
                 <div>
                   <p className="flashCartName">{data.name}</p>
-                  <button className="flashCartBtn">Add To Cart</button>
+                  <Link href='/flash-sale'> <button className="flashCartBtn ">Add To Cart</button></Link>
                   <div className="flex items-center">
                     <HiStar size={25} className="startIcon" />
                     <HiStar size={25} className="startIcon" />

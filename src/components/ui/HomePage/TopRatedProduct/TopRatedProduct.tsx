@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import Image from "next/image";
 import Container from "../../Container";
@@ -23,7 +22,6 @@ const TopRatedProduct = async () => {
   });
   const products = await res.json();
 
-  
   const sortedProducts = products?.data?.sort(
     (a: TProduct, b: TProduct) => b.review - a.review
   );
@@ -39,22 +37,25 @@ const TopRatedProduct = async () => {
         </Link>
       </div>
       <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid xl:grid-cols-4 gap-10 place-content-center place-items-center mt-10">
-        {sortedProducts?.slice(0,8).map((data: TProduct) => (
+        {sortedProducts?.slice(0, 8).map((data: TProduct) => (
           <div key={data._id} className="flashSellProductWrap">
             <div className="flashContent">
               <Image width="500" height="500" src={data.image} alt="flash" />
               <div>
                 <p className="flashCartName">{data.name}</p>
-                <button className="flashCartBtn ">Add To Cart</button>
+                <Link href="/products">
+                  {" "}
+                  <button className="flashCartBtn ">Add To Cart</button>
+                </Link>
                 <div className="flex items-center">
-                <div className="flex items-center mr-2">
-                  <HiStar size={25} className=" startIcon" />
-                  <HiStar size={25} className=" startIcon" />
-                  <HiStar size={25} className=" startIcon" />
-                  <HiStar size={25} className=" startIcon" />
-                  <HiStar size={25} className=" startIcon" />
-                </div>
-                <span>{data.review}</span>
+                  <div className="flex items-center mr-2">
+                    <HiStar size={25} className=" startIcon" />
+                    <HiStar size={25} className=" startIcon" />
+                    <HiStar size={25} className=" startIcon" />
+                    <HiStar size={25} className=" startIcon" />
+                    <HiStar size={25} className=" startIcon" />
+                  </div>
+                  <span>{data.review}</span>
                 </div>
                 <div className="flex items-center  my-2">
                   <del className="mr-2"> ৳484848</del> <HiMinus />
@@ -63,7 +64,7 @@ const TopRatedProduct = async () => {
               </div>
             </div>
             <div className="iconWraps space-y-4">
-              <TopRatedIcons product={products}/>
+              <TopRatedIcons product={products} />
               <HiOutlineHeart className=" startIcon  startIcon2" size={30} />
               <HiOutlineShoppingCart
                 className=" startIcon startIcon2"

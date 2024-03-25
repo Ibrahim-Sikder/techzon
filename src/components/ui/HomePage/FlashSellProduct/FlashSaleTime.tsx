@@ -32,21 +32,21 @@ const FlashSaleTime = () => {
   
 
   return (
-    <div className="flex-wrap flex items-center">
+    <div className="flex-wrap flex items-center ">
       <h3 className="text-2xl font-semibold">Flash Sale</h3>
       {endTime && (
-        <span className="ml-10">
+        <span className="ml-0 lg:ml-10 mt-3  lg:mt-0">
           Ends after:
-          <span className="ml-3 text-2xl bg-[#F14705] text-white px-3 py-1 rounded-sm">
+          <span className="ml-2 lg:ml-3 text-2xl bg-[#F14705] text-white px-3 py-1 rounded-sm">
             {formatTime(endTime).days}d   
           </span>
-          <span className="ml-3 text-2xl bg-[#F14705] text-white px-3 py-1 rounded-sm">
+          <span className="ml-2 lg:ml-3 text-2xl bg-[#F14705] text-white px-3 py-1 rounded-sm">
           {formatTime(endTime).hours}h
           </span>
-          <span className="ml-3 text-2xl bg-[#F14705] text-white px-3 py-1 rounded-sm">
+          <span className="ml-2 lg:ml-3 text-2xl bg-[#F14705] text-white px-3 py-1 rounded-sm">
           {formatTime(endTime).minutes}m
           </span>
-          <span className="ml-3 text-2xl bg-[#F14705] text-white px-3 py-1 rounded-sm">
+          <span className="ml-2 lg:ml-3 text-2xl bg-[#F14705] text-white px-3 py-1 rounded-sm">
           {formatTime(endTime).seconds}s
           </span>
 

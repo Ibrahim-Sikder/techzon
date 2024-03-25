@@ -7,6 +7,7 @@ import Container from "../../Container";
 import TZSelect from "../../TZSelect/TZSelect";
 import AddProductBtn from "../../AddproductBtn/AddProductBtn";
 import './FlashSellProduct.css'
+import Link from "next/link";
 
 
 interface Product {
@@ -101,7 +102,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ onClose, product }) =>  {
             <div className="flex items-center mt-2 mb-5">
               <AddProductBtn />
 
-              <button className="addToCartBtn">Add to cart</button>
+              <Link href='/products'> <button className="flashCartBtn ">Add To Cart</button></Link>
             </div>
           </div>
         </div>
