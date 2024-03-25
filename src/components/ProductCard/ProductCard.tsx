@@ -10,7 +10,7 @@ const ProductCard = () => {
 
   return (
     <div>
-      <div className="flex flex-wrap justify-between lg:block space-y-5 ">
+      <div className="flex flex-wrap justify-between lg:block space-y-0 lg:space-y-5 gap-3 ">
         <Card className="card">
           <h4 className="text-xl font-semibold">Price Range </h4>
           <div className="space-y-3 mt-3">
