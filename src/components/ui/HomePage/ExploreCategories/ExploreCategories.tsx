@@ -37,6 +37,7 @@ const ExploreCategories =async() => {
                             alt='categories'
                         />
                         <h3 className="text-xl font-semibold mt-3"> {data.categories} </h3>
+                        <Link href={`/products?category=${encodeURIComponent(data.categories)}`}>See All </Link>
                         </div>
                     ))
                 }
