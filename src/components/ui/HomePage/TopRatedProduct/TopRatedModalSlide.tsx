@@ -4,24 +4,15 @@ import "keen-slider/keen-slider.min.css";
 import Image from "next/image";
 
 import React, { MutableRefObject } from "react";
-import "./SinglePageSlider.css";
+import "../../../../components/SinglePageSlider/SinglePageSlider";
 import {
   useKeenSlider,
   KeenSliderPlugin,
   KeenSliderInstance,
 } from "keen-slider/react";
+import slide from '../../../../assets/images/explore2.png'
 
 
-
-interface SinglePageSliderProps {
-  product: {
-    data: {
-      image: string;
-
-    };
-
-  };
-}
 
 
 function ThumbnailPlugin(
@@ -59,10 +50,8 @@ function ThumbnailPlugin(
   };
 }
 
-export default function SinglePageSlider({ product }:SinglePageSliderProps) {
-  if (!product || !product.data) {
-    return null; // or handle the case when product or product.data is undefined
-  }
+export default function TopRatedModalSlide() {
+
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     initial: 0,
   });
@@ -77,13 +66,14 @@ export default function SinglePageSlider({ product }:SinglePageSliderProps) {
     [ThumbnailPlugin(instanceRef)]
   );
 
+
   return (
     <>
       <div ref={sliderRef} className="keen-slider">
 
         <div className="keen-slider__slide number-slide1">
           <Image
-            src={product.data.image}
+            src={slide}
             alt="slider"
             width="500"
             height="500"
@@ -91,7 +81,7 @@ export default function SinglePageSlider({ product }:SinglePageSliderProps) {
         </div>
         <div className="keen-slider__slide number-slide2">
           <Image
-            src={product.data.image}
+            src={slide}
             alt="slider"
             width="500"
             height="500"
@@ -99,7 +89,7 @@ export default function SinglePageSlider({ product }:SinglePageSliderProps) {
         </div>
         <div className="keen-slider__slide number-slide3">
           <Image
-            src={product.data.image}
+            src={slide}
             alt="slider"
             width="500"
             height="500"
@@ -107,7 +97,7 @@ export default function SinglePageSlider({ product }:SinglePageSliderProps) {
         </div>
         <div className="keen-slider__slide number-slide4">
           <Image
-            src={product.data.image}
+            src={slide}
             alt="slider4"
             width="500"
             height="500"
@@ -115,7 +105,7 @@ export default function SinglePageSlider({ product }:SinglePageSliderProps) {
         </div>
         <div className="keen-slider__slide number-slide5">
           <Image
-            src={product.data.image}
+            src={slide}
             alt="slider"
             width="500"
             height="500"
@@ -126,7 +116,7 @@ export default function SinglePageSlider({ product }:SinglePageSliderProps) {
       <div ref={thumbnailRef} className="keen-slider thumbnail">
         <div className="keen-slider__slide number-slide1">
           <Image
-            src={product.data.image}
+            src={slide}
             alt="slider"
             width="500"
             height="500"
@@ -134,7 +124,7 @@ export default function SinglePageSlider({ product }:SinglePageSliderProps) {
         </div>
         <div className="keen-slider__slide number-slide2">
           <Image
-            src={product.data.image}
+            src={slide}
             alt="slider"
             width="500"
             height="500"
@@ -142,7 +132,7 @@ export default function SinglePageSlider({ product }:SinglePageSliderProps) {
         </div>
         <div className="keen-slider__slide number-slide3">
           <Image
-            src={product.data.image}
+            src={slide}
             alt="slider"
             width="500"
             height="500"
@@ -150,7 +140,7 @@ export default function SinglePageSlider({ product }:SinglePageSliderProps) {
         </div>
         <div className="keen-slider__slide number-slide4">
           <Image
-            src={product.data.image}
+            src={slide}
             alt="slider4"
             width="500"
             height="500"
@@ -158,7 +148,7 @@ export default function SinglePageSlider({ product }:SinglePageSliderProps) {
         </div>
         <div className="keen-slider__slide number-slide5">
           <Image
-            src={product.data.image}
+            src={slide}
             alt="slider4"
             width="500"
             height="500"

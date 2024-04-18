@@ -1,24 +1,18 @@
-// ProductIcons.tsx
- 'use client'
+'use client'
 
 import React, { useState } from 'react';
 import { HiOutlineEye } from 'react-icons/hi';
-import ProductModal from './ProductModal';
+import TopRatedModal from './TopRatedModal';
 
-interface TProduct {
+interface Product {
     id: number;
     name: string;
-    data: {
-        name: string;
-        image: string;
-    };
+    // Add other properties as needed
 }
 
-interface ProductIconsProps {
-    product: TProduct;
-}
 
-const ProductIcons: React.FC<ProductIconsProps> = ({ product }) => {
+
+const TopRatedIcons= () => {
     const [open, setOpen] = useState(false);
 
     const handleOpen = () => setOpen(true);
@@ -32,9 +26,9 @@ const ProductIcons: React.FC<ProductIconsProps> = ({ product }) => {
                 size={30}
             />
 
-            {open && <ProductModal product={product} onClose={handleClose} />}
+            {open && <TopRatedModal onClose={handleClose} />}
         </div>
     );
 };
 
-export default ProductIcons;
+export default TopRatedIcons;

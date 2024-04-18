@@ -21,42 +21,40 @@ const FlashSaleTime = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const formatTime = (endTime: number | Date) => {
-    const diff = endTime - new Date();
+  const formatTime = (endTime: Date) => {
+    const diff = endTime.getTime() - new Date().getTime();
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
     const seconds = Math.floor((diff / 1000) % 60);
     return { days, hours, minutes, seconds };
   };
+  
 
   return (
-    <div className="flex-wrap flex items-center mb-10">
+    <div className="flex-wrap flex items-center ">
       <h3 className="text-2xl font-semibold">Flash Sale</h3>
       {endTime && (
-        <span className="ml-10">
-          Ends after:
-          <span className="ml-3 text-2xl bg-[#F14705] text-white px-3 py-1 rounded-sm">
+        <span className="ml-0 lg:ml-10 mt-3  lg:mt-0 flex items-center flex-wrap ">
+        <b>  Ends Offer:</b>
+          <div>
+          <span className="ml-0 sm:ml-2 lg:ml-3 text-sm md:text-2xl bg-[#F14705] text-white px-3 py-1 rounded-sm  ">
             {formatTime(endTime).days}d   
           </span>
-          <span className="ml-3 text-2xl bg-[#F14705] text-white px-3 py-1 rounded-sm">
+          <span className="ml-2 lg:ml-3 text-sm md:text-2xl bg-[#F14705] text-white px-3 py-1 rounded-sm ">
           {formatTime(endTime).hours}h
           </span>
-          <span className="ml-3 text-2xl bg-[#F14705] text-white px-3 py-1 rounded-sm">
+          <span className="ml-2 lg:ml-3 text-sm md:text-2xl bg-[#F14705] text-white px-3 py-1 rounded-sm ">
           {formatTime(endTime).minutes}m
           </span>
-          <span className="ml-3 text-2xl bg-[#F14705] text-white px-3 py-1 rounded-sm">
+          <span className="ml-2 lg:ml-3 text-sm md:text-2xl bg-[#F14705] text-white px-3 py-1 rounded-sm ">
           {formatTime(endTime).seconds}s
           </span>
+          </div>
 
         </span>
       )}
-      <Link href="/flash-sale">
-        <div className="flex items-center ml-8 bg-[#2251CF] text-white  px-3 py-2 rounded-sm ">
-          <button>See All</button>{" "}
-          <HiOutlineArrowNarrowRight size={20} />
-        </div>
-      </Link>
+     
     </div>
   );
 };

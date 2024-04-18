@@ -1,26 +1,46 @@
-import SinglePageSlider from "@/components/SinglePageSlider/SinglePageSlider";
-import Container from "@/components/ui/Container";
-import React from "react";
-import { HiChevronRight, HiStar } from "react-icons/hi";
-import TZSelect from "@/components/ui/TZSelect/TZSelect";
-import "../product.css";
-import AddProductBtn from "@/components/ui/AddproductBtn/AddProductBtn";
-import { TProductId } from "@/types";
+/* eslint-disable react/prop-types */
 
-const SingleProduct = async ({ params }: TProductId) => {
-  const res = await fetch(
-    `https://techzon-server.vercel.app/api/v1/products/${params.productId}`,
-    {
-      next: {
-        revalidate: 30,
-      },
-    }
-  );
-  const products = await res.json();
-console.log(products)
+import SinglePageSlider from "@/components/SinglePageSlider/SinglePageSlider";
+import { HiChevronRight, HiStar } from "react-icons/hi";
+import { IoCloseSharp } from "react-icons/io5";
+import Container from "../../Container";
+import TZSelect from "../../TZSelect/TZSelect";
+import AddProductBtn from "../../AddproductBtn/AddProductBtn";
+import '../FlashSellProduct/FlashSellProduct.css'
+import Link from "next/link";
+import laptop from '../../../../assets/images/explore6.png'
+import TopRatedModalSlide from "./TopRatedModalSlide";
+
+interface ProductModalProps {
+  onClose: () => void;
+}
+
+const TopRatedModal: React.FC<ProductModalProps> = async({ onClose }) =>  {
+
+    const res = await fetch("https://techzon-server.vercel.app/api/v1/products", {
+        next: {
+          revalidate: 30,
+        },
+      });
+      const product = await res.json();
+    
+
+
 
   return (
-    <Container className="mt-10">
+    <div className="fixed top-0 left-0 z-[999999999] w-screen h-screen bg-black/60 backdrop-blur-sm modalContainer overflow-hidden">
+      <div className="relative left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  w-[1400px] max-auto  lg:max-w-[100%]  h-auto ">
+        <div className="bg-white shadow-md dark:bg-[#12141D] rounded-xl  overflow-hidden p-10">
+          <div className="flex justify-end ">
+            <IoCloseSharp
+              size={25}
+              onClick={onClose}
+              width={24}
+              height={24}
+              className="text-white rounded-full cursor-pointer top-10 right-10 bg-[#A0A0A0] p-1"
+            />
+          </div>
+          <Container className="">
       <div className="gap-3 flex-wrap flex items-center space-x-3">
         <span>Home</span>
         <HiChevronRight />
@@ -34,14 +54,15 @@ console.log(products)
         <HiChevronRight />
         <small>Ultra Wireless S50 Headphones S50 with Bluetooth</small>
       </div>
-      <div className="flex-wrap xl:flex-nowrap flex items-center gap-14">
+      <div className="flex-wrap xl:flex-nowrap flex items-cen
+      ter gap-14">
         <div className="xl:w-[50%] overflow-hidden w-full ">
-          <SinglePageSlider product={products}/>
+          <TopRatedModalSlide/>
         </div>
         <div className="border-b border-[#ddd]">
           <small>Headphones</small>
           <h3 className="text-2xl font-semibold my-3">
-            {products?.data?.name}
+            Headphones Ultra Wireless S50 Headphones S50 with Bluetooth
           </h3>
           <div className="flex items-center text-sm ">
             <div className="flex items-center ">
@@ -51,7 +72,7 @@ console.log(products)
               <HiStar size={20} className=" startIcon" />
               <HiStar size={20} className=" startIcon" />
             </div>
-            <small> (3 customer reviews){products.data.review}</small>
+            <small> (3 customer reviews)</small>
           </div>
           <div className="mt-3 text-sm featureItem  text-[#7c7c7c]">
             <ul className="space-y-2">
@@ -62,11 +83,13 @@ console.log(products)
             </ul>
           </div>
           <p className=" text-[#7c7c7c] my-5">
-           {products.data.description} 
+            "Experience wireless freedom with Ultra Wireless S50 Headphones.
+            Enjoy seamless Bluetooth connectivity and immersive sound. Elevate
+            your audio experience today!"
           </p>
-          <span className="my-5 block"> {products.data.brand}: FW511948218</span>
+          <span className="my-5 block">SKU: FW511948218</span>
           <div className="flex items-">
-            <span className="text-5xl">${products.data.price}</span>{" "}
+            <span className="text-5xl">$1,999.00</span>{" "}
             <del className="text-xl">$2,299.00</del>
           </div>
           <hr className="my-5" />
@@ -81,13 +104,16 @@ console.log(products)
             <div className="flex items-center mt-2 mb-5">
               <AddProductBtn />
 
-              <button className="addToCartBtn">Add to cart</button>
+              <Link href='/products'> <button className="flashCartBtn ">Add To Cart</button></Link>
             </div>
           </div>
         </div>
       </div>
     </Container>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default SingleProduct;
+export default TopRatedModal;

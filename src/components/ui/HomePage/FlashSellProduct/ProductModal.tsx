@@ -7,8 +7,23 @@ import Container from "../../Container";
 import TZSelect from "../../TZSelect/TZSelect";
 import AddProductBtn from "../../AddproductBtn/AddProductBtn";
 import './FlashSellProduct.css'
+import Link from "next/link";
 
-const ProductModal = ({ onClose }) => {
+
+interface Product {
+  data: {
+    name: string;
+    image: string;
+  };
+}
+
+interface ProductModalProps {
+  onClose: () => void;
+  product: Product;
+}
+
+const ProductModal: React.FC<ProductModalProps> = ({ onClose, product }) =>  {
+  console.log(product)
 
 
   return (
@@ -40,7 +55,7 @@ const ProductModal = ({ onClose }) => {
       </div>
       <div className="flex-wrap xl:flex-nowrap flex items-center gap-14">
         <div className="xl:w-[50%] overflow-hidden w-full ">
-          <SinglePageSlider />
+          <SinglePageSlider product={product} />
         </div>
         <div className="border-b border-[#ddd]">
           <small>Headphones</small>
@@ -87,7 +102,7 @@ const ProductModal = ({ onClose }) => {
             <div className="flex items-center mt-2 mb-5">
               <AddProductBtn />
 
-              <button className="addToCartBtn">Add to cart</button>
+              <Link href='/products'> <button className="flashCartBtn ">Add To Cart</button></Link>
             </div>
           </div>
         </div>

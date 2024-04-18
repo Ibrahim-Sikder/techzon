@@ -18,6 +18,14 @@
 .featureItem ul li{
     margin-left:15px;
 }
+@media only screen and (max-width:768px){
+    .card{
+        width:340px;
+        height:350px;
+    }
+    .addToCartBtn {
+        width: 120px;}
+}
 
 @media only screen and (max-width:500px){
     .card{
