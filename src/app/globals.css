@@ -33,3 +33,11 @@ body{
 	transition: all .5s ease;
 	animation-delay: .5s;
 }
+.shopBtn {
+	background: #2251CF;
+	width:100%;
+	height: 33px;
+	border-radius: 5px;
+	font-size: 18px;
+	color: #fff;
+}

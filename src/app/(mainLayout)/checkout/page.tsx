@@ -1,125 +1,138 @@
-"use client";
-import "./Checkout.css";
-import img from "../../../public/assets/fruit14.png";
-import { FaPlus, FaMinus, FaRegTrashAlt } from "react-icons/fa";
-import { useState } from "react";
-import checkout from "@/assets/images/categories8.png";
-import Image from "next/image";
-import Link from "next/link";
+/* eslint-disable no-mixed-spaces-and-tabs */
 import Container from "@/components/ui/Container";
+import "./checkout.css";
+import { Radio } from "antd";
 
-const Cart = () => {
-  const [order, setOrder] = useState(0);
-
-  const incrementOrder = () => {
-    setOrder(order + 1);
-  };
-  const decrementOrder = () => {
-    if (order < 1) {
-      setOrder(0);
-    } else {
-      setOrder(order - 1);
-    }
-  };
+const Checkout = () => {
   return (
-   <Container className="">
-     <div className="wrapContainer">
-      <div className="mt-5">
-        <span>Home </span>
-        <span> \ </span>
-        <span> Checkout </span>
-        <h3 className="text-3xl font-bold my-5">Checkout </h3>
-      </div>
-      <div className="flex justify-between ">
-        <table className="table cartTable">
-          <tr>
-            <th> Image</th>
-            <th> Product</th>
-            <th> Price </th>
-            <th> Quantity </th>
-            <th> Total </th>
-            <th> Remove </th>
-          </tr>
-          <tbody>
-            <tr>
-              <td>
-                <Image className="w-[60px]" src={checkout} alt="fruit" />
-              </td>
-              <td>
-                <b>Beef Potjiekos Per - 500g</b>
-              </td>
-              <td> $500</td>
-              <td>
-                <div className="increaseDecressBtnWrap quantity mx-auto">
-                  <small onClick={decrementOrder}>
-                    <FaMinus />
-                  </small>
-                  <span> {order} </span>
-                  <small onClick={incrementOrder}>
-                    <FaPlus />
-                  </small>
+    <Container className="">
+      <div className="wrapContainer">
+        <div className="checkoutWrap mt-5 flex justify-between flex-wrap ">
+          <div className="checkoutLeftSide">
+            <h3 className="text-3xl font-bold">Billing Details </h3>
+            <div className="mt-5 flex items-center jsutify-between">
+              <input
+                className="checkoutInputField"
+                required
+                id="outlined-required"
+                placeholder="First Name"
+              />
+              <input
+                className="checkoutInputField"
+                required
+                id="outlined-required"
+                placeholder="Last Name"
+              />
+            </div>
+            <div className="my-3">
+              <input
+                className="checkoutInputField2"
+                id="outlined-required"
+                placeholder="Company name (optional)"
+              />
+            </div>
+            <div className="my-3">
+              {/* <TextField className='checkoutInputField2' required id="outlined-required" label="Country / Region" /> */}
+              <select>
+                <option value={10}>Bangladesh</option>
+                <option value={20}>United States </option>
+                <option value={30}>United Kingdom </option>
+                <option value={30}>India </option>
+                <option value={30}>Vietname</option>
+              </select>
+            </div>
+            <div className="my-3">
+              <input
+                className="checkoutInputField2"
+                required
+                id="outlined-required"
+                placeholder="House number and street name"
+              />
+            </div>
+            <div className="my-3">
+              <input
+                className="checkoutInputField2"
+                required
+                id="outlined-required"
+                placeholder="Apartment, suite, unit, etc. (option)"
+              />
+            </div>
+            <div className="my-3">
+              <input
+                className="checkoutInputField2"
+                required
+                id="outlined-required"
+                placeholder="Town / City "
+              />
+            </div>
+            <div className="my-3">
+              <input
+                className="checkoutInputField2"
+                required
+                id="outlined-required"
+                placeholder="ZIP Code "
+              />
+            </div>
+            <div className="my-3">
+              <input
+                className="checkoutInputField2"
+                required
+                id="outlined-required"
+                placeholder="Phone"
+              />
+            </div>
+            <div className="my-3">
+              <input
+                className="checkoutInputField2"
+                required
+                id="outlined-required"
+                placeholder="Email address "
+              />
+            </div>
+            <div className="flex items-center">
+			<Radio>Ship to a different address?</Radio>
+            </div>
+            <div className="my-3">
+              <label> Other Note </label>
+              <textarea className="otherNote" />
+            </div>
+          </div>
+
+          <div className="checkoutRightSide">
+            <div className="yourOrder">
+              <h3 className="text-2xl font-bold mb-3">Your Order </h3>
+              <div className="flex items-center justify-between ">
+                <span>Sub Total </span>
+                <span>৳৫৯০</span>
+              </div>
+              <div className="flex items-center justify-between ">
+                <span>Shipping </span>
+                <span>Delivery Cost (Product Delivery Free)</span>
+              </div>
+              <div className="flex items-center justify-between ">
+                <b>Total </b>
+                <b>৳১০৯০</b>
+              </div>
+            </div>
+            <div className="delivery">
+              <div className="cashOnDelivery">
+                <div className="flex items-center">
+                  <Radio>Cash on delivery</Radio>
                 </div>
-              </td>
-              <td> $600 </td>
-              <td>
-                <FaRegTrashAlt className="trashIcon" />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <Image className="w-[60px]" src={checkout} alt="fruit" />
-              </td>
-              <td>
-                <b>Beef Potjiekos Per - 500g</b>
-              </td>
-              <td> $500</td>
-              <td>
-                <div className="increaseDecressBtnWrap quantity mx-auto">
-                  <small onClick={decrementOrder}>
-                    <FaMinus />
-                  </small>
-                  <span> {order} </span>
-                  <small onClick={incrementOrder}>
-                    <FaPlus />
-                  </small>
+              </div>
+
+              <div className=" lg:ml-5 mt-5 ">
+                <div className="flex items-center">
+                 <Radio> I have read and agree to the website terms and conditions *</Radio>
                 </div>
-              </td>
-              <td> $600 </td>
-              <td>
-                <FaRegTrashAlt className="trashIcon" />
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div className="shippingCart">
-          <h3 className="text-2xl font-bold">Cart Totals </h3>
-          <div className="flex items-center justify-between my-2">
-            <span>Sub Total </span>
-            <b>$599</b>
+                <button className="shopBtn placeOrderBtn">Place Order </button>
+              </div>
+            </div>
           </div>
-          <div className="flex items-center justify-between my-2">
-            <span>Shipping </span>
-            <b>$9</b>
-          </div>
-          <hr />
-          <div className="flex items-center justify-between my-2">
-            <b>Total </b>
-            <b>$509</b>
-          </div>
-          <Link href="/checkout">
-            <button className="shopBtn checkoutBtn">
-              Procceed To Checkout{" "}
-            </button>
-          </Link>
         </div>
       </div>
-      <div className="mt-5">
-        <input className="border p-2 rounded-md" placeholder="Coupon Apply " />
-      </div>
-      <button className=" mt-3 bg-[#2251CF] text-white px-4 py-1 rounded-sm">Apply </button>
-    </div>
-   </Container>
+    </Container>
   );
 };
 
-export default Cart;
+export default Checkout;

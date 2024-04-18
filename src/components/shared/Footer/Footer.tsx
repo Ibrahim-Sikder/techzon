@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="bg-[#FFFFFF] sectionMargin ">
+    <div className="bg-[#EFF0F5] sectionMargin ">
       <Container className="">
         <div className="footer">
           <div>
