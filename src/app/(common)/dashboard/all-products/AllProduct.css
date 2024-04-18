@@ -28,7 +28,13 @@ th {
     border-collapse: collapse;
   }
   
-
+.addProductBtn{
+  width:150px;
+  background:#001529;
+  color:#fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
   
   @media screen and (max-width: 600px) {
     .attendanceInputTable th,
