@@ -22,21 +22,27 @@ const Page = async () => {
       <div className="flex items-center justify-between mb-3 ">
         <h3 className="text-3xl font-semibold ">Dashboard / My Orders </h3>
       </div>
+      <div className="flex items-center justify-between orderTable">
+        <div className="text-justify">
+          <small className="block">
+            Order <b className="text-[#2251CF]">#657172694756550</b>
+          </small>
+          <small>Placed on 30 Mar 2024 11:59:49</small>
+        </div>
+        <button><b className="text-[#2251CF]">Manage</b></button>
+      </div>
       <div className="myOrders">
         <table className="orderTable">
           <thead>
             <tr>
               <th>Items</th>
               <th>Quantity</th>
-              <th>Mange Order</th>
+              <th>Status </th>
             </tr>
           </thead>
           <tbody>
             {products?.data?.slice(0, 2).map((data: TProduct, i: number) => (
-              <tr
-                
-                key={data._id}
-              >
+              <tr key={data._id}>
                 <td>
                   <div className="flex items-center justify-center ">
                     <Image
@@ -51,7 +57,9 @@ const Page = async () => {
                 </td>
                 <td> 5 </td>
                 <td>
-                  <button className="bg-[#EFF0F5] px-2 py-1 rounded-lg">Cancelled</button>
+                  <button className="bg-[#EFF0F5] px-2 py-1 rounded-lg">
+                    Cancelled
+                  </button>
                 </td>
               </tr>
             ))}

@@ -6,10 +6,16 @@ import TZSelect from "@/components/ui/TZSelect/TZSelect";
 import "../product.css";
 import AddProductBtn from "@/components/ui/AddproductBtn/AddProductBtn";
 import { TProductId } from "@/types";
-
+import type { Metadata } from 'next'
+ 
+export const metadata: Metadata = {
+  title: 'Product details',
+  description: '...',
+}
 const SingleProduct = async ({ params }: TProductId) => {
+
   const res = await fetch(
-    `https://techzon-server.vercel.app/api/v1/products/${params.productId}`,
+    `http://localhost:5000/api/v1/products/${params.productId}`,
     {
       next: {
         revalidate: 30,
@@ -17,7 +23,10 @@ const SingleProduct = async ({ params }: TProductId) => {
     }
   );
   const products = await res.json();
-console.log(products)
+
+  const handleAddtoCart = ()=>{
+    
+  }
 
   return (
     <Container className="mt-10">

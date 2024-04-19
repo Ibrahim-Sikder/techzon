@@ -1,36 +1,28 @@
-"use client";
+'use client'
 
 import React, { useEffect, useState } from "react";
-import Container from "@/components/ui/Container";
 import { Card, Checkbox } from "antd";
-import { TProduct } from "@/types";
 import Image from "next/image";
-import {
-  HiMinus,
-  HiOutlineArrowNarrowRight,
-  HiOutlineHeart,
-  HiOutlineShoppingCart,
-  HiStar,
-} from "react-icons/hi";
 import Link from "next/link";
+import { HiMinus, HiOutlineArrowNarrowRight, HiOutlineHeart, HiOutlineShoppingCart, HiStar } from "react-icons/hi";
+import { TProduct } from "@/types";
+import Container from "@/components/ui/Container";
 import ProductIcons from "@/components/ui/HomePage/FlashSellProduct/ProductIcons";
 import TopRatedIcons from "@/components/ui/HomePage/TopRatedProduct/TopRatedIcons";
+import Head from "next/head";
 
-const ProductPage = () => {
+
+const ProductPage = ({ metadata }: { metadata?: any }) => {
   const [products, setProducts] = useState<TProduct[]>([]);
   const [priceRange, setPriceRange] = useState<number[]>([]);
   const [brands, setBrands] = useState<string[]>([]);
-  const [reviews, setreviews] = useState<number[]>([]);
-  const [selectedFilters, setSelectedFilters] = useState<{
-    [key: string]: string | number;
-  }>({});
+  const [reviews, setReviews] = useState<number[]>([]);
+  const [selectedFilters, setSelectedFilters] = useState<{ [key: string]: string | number; }>({});
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await fetch(
-          "https://techzon-server.vercel.app/api/v1/products"
-        );
+        const res = await fetch("http://localhost:5000/api/v1/products");
         const data = await res.json();
         setProducts(data.data || []);
 
@@ -41,12 +33,12 @@ const ProductPage = () => {
         const uniqueBrands: string[] = Array.from(
           new Set(data.data.map((product: TProduct) => product.brand))
         );
-        const uniquereviews: number[] = Array.from(
+        const uniqueReviews: number[] = Array.from(
           new Set(data.data.map((product: TProduct) => product.review))
         );
         setPriceRange(uniquePriceRange);
         setBrands(uniqueBrands);
-        setreviews(uniquereviews);
+        setReviews(uniqueReviews);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
@@ -63,7 +55,6 @@ const ProductPage = () => {
     if (isSameFilterClicked) {
       delete updatedFilters[filterType];
     } else {
-
       updatedFilters[filterType] = value;
     }
 
@@ -78,16 +69,17 @@ const ProductPage = () => {
       }
     });
 
-
     setProducts(filteredProducts);
   };
 
 
-
- 
-
   return (
     <Container className="pt-12">
+       <Head>
+        <title>{metadata?.title || "Dynamic Product Page Title"}</title>
+        <meta name="description" content={metadata?.description || "Dynamic description for product page"} />
+        {/* Add other meta tags as needed */}
+      </Head>
       <div className="flex flex-wrap lg:flex-nowrap md:justify-between gap-5">
         <div className="flex flex-wrap justify-between lg:block space-y-0 lg:space-y-5 gap-3">
           <Card className="card">
