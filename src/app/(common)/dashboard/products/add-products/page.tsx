@@ -149,7 +149,7 @@ const page = () => {
             </div>
               <input type="file" id="files" className="hidden" />
               <label
-                for="files"
+                htmlFor="files"
                 className="fileUpload flex items-center justify-center cursor-pointer bg-[#2251CF] text-white py-2 rounded-md "
               >
                 <span>

@@ -1,18 +1,16 @@
 'use client'
 
 import React, { useState } from "react";
-import "./AllProduct.css";
+
 import { TProduct } from "@/types";
 import Image from "next/image";
 import { PiPlus } from "react-icons/pi";
 import EModal from "@/components/ui/EModal/EModal";
 import { HiOutlineTrash } from "react-icons/hi";
 import { FaRegEdit } from "react-icons/fa";
-
+import '../products/AllProduct.css'
 const Page = async () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+
 
 
   const res = await fetch("http://localhost:5000/api/v1/products", {
@@ -25,8 +23,8 @@ const Page = async () => {
   return (
     <>
     <div className="flex items-center justify-between mb-3">
-          <h3 className="text-3xl font-semibold ">All Products </h3>
-          <button onClick={handleOpen} className="addProductBtn flex items-center"><PiPlus size={20}/> <span className="ml-1 ">Add Products</span> </button>
+          <h3 className="text-3xl font-semibold ">Dashboard / Orders </h3>
+         
         </div>
       <div className="table-container">
         
@@ -35,10 +33,9 @@ const Page = async () => {
             <tr>
               <th>SL No</th>
               <th>Items</th>
-              <th>Review</th>
               <th>Categories</th>
               <th>Discount</th>
-              <th colSpan={2}>Action</th>
+              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -60,26 +57,19 @@ const Page = async () => {
                     <span>{data.name}</span>
                   </div>
                 </td>
-                <td>{data.review}</td>
                 <td>{data.categories}</td>
                 <td>{data.discount}</td>
                 <td>
-                    <div className="flex items-center justify-center w-10">
-                    <HiOutlineTrash size={30} className="text-red-500 flex justify-center"/>
-                    </div>
+                    <button className='text-green-500 '>Approved</button>
                 </td>
-                <td> <div className="flex items-center justify-center w-10">
-                    <FaRegEdit size={30} className="text-green-500 flex justify-center"/>
-                    </div></td>
+               
               </tr>
             ))}
           </tbody>
         </table>
 
 
-        {
-          open && <EModal onClose={handleClose}/>
-        }
+       
       </div>
     </>
   );

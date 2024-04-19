@@ -35,6 +35,10 @@ const DashboardPage = ({children}:{children:ReactNode}) => {
           defaultSelectedKeys={['1']}
           items={[
             {
+              key: 'techZone',
+              label: <Link href='/'><span className='text-3xl font-semibold my-3 block text-white'>TechZon</span></Link>,
+            },
+            {
               key: 'dashboard',
               icon: <HiOutlineHome />,
               label: <Link href='/dashboard'>Dashboard</Link>,
@@ -48,6 +52,11 @@ const DashboardPage = ({children}:{children:ReactNode}) => {
               key: 'dashboard/products/add-products',
               icon: <HiOutlineShoppingBag />,
               label: <Link href='/dashboard/products/add-products'>Add Product</Link>,
+            },
+            {
+              key: 'dashboard/orders',
+              icon: <HiOutlineShoppingBag />,
+              label: <Link href='/dashboard/orders'>Orders</Link>,
             },
           ]}
         />
