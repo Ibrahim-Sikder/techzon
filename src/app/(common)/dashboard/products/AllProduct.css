@@ -23,7 +23,7 @@ th {
     overflow-x: auto;
   }
   
-  .attendanceInputTable {
+  .productTable {
     width: 100%;
     border-collapse: collapse;
   }
@@ -42,9 +42,24 @@ th {
   .addProductWrap input, .addProductWrap textarea, .fileUpload{
     width:540px;
   }
+
+  .myOrders{
+  
+
+}
+
+.orderTable{
+  background:#fff ;
+  width:1000px;
+text-align: center;
+  padding:30px;
+}
+.orderTable td, .orderTable th{
+  text-align: center;
+}
   @media screen and (max-width: 600px) {
-    .attendanceInputTable th,
-    .attendanceInputTable td {
+    .productTable th,
+    .productTable td {
       padding: 6px;
       font-size: 14px;
     }

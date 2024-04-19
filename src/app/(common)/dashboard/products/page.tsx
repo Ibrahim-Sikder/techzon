@@ -30,7 +30,7 @@ const Page = async () => {
         </div>
       <div className="table-container">
         
-        <table className="attendanceInputTable">
+        <table className="productTable">
           <thead>
             <tr>
               <th>SL No</th>

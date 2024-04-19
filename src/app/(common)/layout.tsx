@@ -58,6 +58,11 @@ const DashboardPage = ({children}:{children:ReactNode}) => {
               icon: <HiOutlineShoppingBag />,
               label: <Link href='/dashboard/orders'>Orders</Link>,
             },
+            {
+              key: 'dashboard/my-orders',
+              icon: <HiOutlineShoppingBag />,
+              label: <Link href='/dashboard/my-orders'>My Orders</Link>,
+            },
           ]}
         />
       </Sider>

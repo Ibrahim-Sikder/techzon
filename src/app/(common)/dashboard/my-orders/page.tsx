@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React, { useState } from "react";
 
@@ -8,47 +8,39 @@ import { PiPlus } from "react-icons/pi";
 import EModal from "@/components/ui/EModal/EModal";
 import { HiOutlineTrash } from "react-icons/hi";
 import { FaRegEdit } from "react-icons/fa";
-import '../products/AllProduct.css'
+import "../products/AllProduct.css";
 const Page = async () => {
-
-
-
   const res = await fetch("http://localhost:5000/api/v1/products", {
     next: {
       revalidate: 30,
     },
   });
   const products = await res.json();
- 
+
   return (
-    <>
-    <div className="flex items-center justify-between mb-3">
-          <h3 className="text-3xl font-semibold ">Dashboard / Orders </h3>
-         
-        </div>
-      <div className="table-container">
-        
-        <table className="productTable">
+    <div className="bg-[#F2F2F2] p-10">
+      <div className="flex items-center justify-between mb-3 ">
+        <h3 className="text-3xl font-semibold ">Dashboard / My Orders </h3>
+      </div>
+      <div className="myOrders">
+        <table className="orderTable">
           <thead>
             <tr>
-              <th>SL No</th>
               <th>Items</th>
-              <th>Categories</th>
-              <th>Discount</th>
-              <th>Status</th>
+              <th>Quantity</th>
+              <th>Mange Order</th>
             </tr>
           </thead>
           <tbody>
-            {products?.data?.map((data: TProduct, i: number) => (
+            {products?.data?.slice(0, 2).map((data: TProduct, i: number) => (
               <tr
-                className={i % 2 === 0 ? "even-row" : "odd-row"}
+                
                 key={data._id}
               >
-                <td>{i + 1}</td>
                 <td>
-                  <div className="flex items-center">
+                  <div className="flex items-center justify-center ">
                     <Image
-                      className="mr-3"
+                      className="mr-3  "
                       alt="products"
                       src={data.image}
                       width="60"
@@ -57,21 +49,16 @@ const Page = async () => {
                     <span>{data.name}</span>
                   </div>
                 </td>
-                <td>{data.categories}</td>
-                <td>{data.discount}</td>
+                <td> 5 </td>
                 <td>
-                    <button className='text-green-500 '>Approved</button>
+                  <button className="bg-[#EFF0F5] px-2 py-1 rounded-lg">Cancelled</button>
                 </td>
-               
               </tr>
             ))}
           </tbody>
         </table>
-
-
-       
       </div>
-    </>
+    </div>
   );
 };
 
