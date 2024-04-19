@@ -40,14 +40,14 @@ const DashboardPage = ({children}:{children:ReactNode}) => {
               label: <Link href='/dashboard'>Dashboard</Link>,
             },
             {
-              key: 'dashboard/all-products/',
+              key: 'dashboard/products',
               icon: <HiOutlineShoppingBag />,
-              label: <Link href='/dashboard/all-products'>All-Products</Link>,
+              label: <Link href='/dashboard/products'>Products</Link>,
             },
             {
-              key: '3',
-              icon: <UploadOutlined />,
-              label: 'nav 3',
+              key: 'dashboard/products/add-products',
+              icon: <HiOutlineShoppingBag />,
+              label: <Link href='/dashboard/products/add-products'>Add Product</Link>,
             },
           ]}
         />

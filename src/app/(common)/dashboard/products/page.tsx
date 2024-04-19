@@ -6,6 +6,8 @@ import { TProduct } from "@/types";
 import Image from "next/image";
 import { PiPlus } from "react-icons/pi";
 import EModal from "@/components/ui/EModal/EModal";
+import { HiOutlineTrash } from "react-icons/hi";
+import { FaRegEdit } from "react-icons/fa";
 
 const Page = async () => {
   const [open, setOpen] = useState(false);
@@ -36,6 +38,7 @@ const Page = async () => {
               <th>Review</th>
               <th>Categories</th>
               <th>Discount</th>
+              <th colSpan={2}>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -60,6 +63,14 @@ const Page = async () => {
                 <td>{data.review}</td>
                 <td>{data.categories}</td>
                 <td>{data.discount}</td>
+                <td>
+                    <div className="flex items-center justify-center w-10">
+                    <HiOutlineTrash size={30} className="text-red-500 flex justify-center"/>
+                    </div>
+                </td>
+                <td> <div className="flex items-center justify-center w-10">
+                    <FaRegEdit size={30} className="text-green-500 flex justify-center"/>
+                    </div></td>
               </tr>
             ))}
           </tbody>
