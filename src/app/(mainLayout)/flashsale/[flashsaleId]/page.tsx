@@ -1,20 +1,19 @@
-import SinglePageSlider from "@/components/SinglePageSlider/SinglePageSlider";
+
 import Container from "@/components/ui/Container";
 import React from "react";
 import { HiChevronRight, HiStar } from "react-icons/hi";
 import TZSelect from "@/components/ui/TZSelect/TZSelect";
-import "../product.css";
-import AddProductBtn from "@/components/ui/AddproductBtn/AddProductBtn";
+import "../../products/product.css";
+import type { Metadata } from "next";
 import { TProductId } from "@/types";
-import type { Metadata } from 'next'
-import Link from "next/link";
- 
-export const metadata: Metadata = {
-  title: 'Product details',
-  description: '...',
-}
-const SingleProduct = async ({ params }: TProductId) => {
+import AddProductBtn from "@/components/ui/AddproductBtn/AddProductBtn";
+import SinglePageSlider from "@/components/SinglePageSlider/SinglePageSlider";
 
+export const metadata: Metadata = {
+  title: "Product details",
+  description: "...",
+};
+const SingleProduct = async ({ params }: TProductId) => {
   const res = await fetch(
     `http://localhost:5000/api/v1/products/${params.productId}`,
     {
@@ -24,10 +23,9 @@ const SingleProduct = async ({ params }: TProductId) => {
     }
   );
   const products = await res.json();
+  console.log(products)
 
-  const handleAddtoCart = ()=>{
-    
-  }
+  const handleAddtoCart = () => {};
 
   return (
     <Container className="mt-10">
@@ -46,7 +44,7 @@ const SingleProduct = async ({ params }: TProductId) => {
       </div>
       <div className="flex-wrap xl:flex-nowrap flex items-center gap-14">
         <div className="xl:w-[50%] overflow-hidden w-full ">
-          <SinglePageSlider product={products}/>
+          <SinglePageSlider product={products} />
         </div>
         <div className="border-b border-[#ddd]">
           <small>Headphones</small>
@@ -61,7 +59,7 @@ const SingleProduct = async ({ params }: TProductId) => {
               <HiStar size={20} className=" startIcon" />
               <HiStar size={20} className=" startIcon" />
             </div>
-            <small> (3 customer reviews){products.data.review}</small>
+            <small> (3 customer reviews){products?.data?.review}</small>
           </div>
           <div className="mt-3 text-sm featureItem  text-[#7c7c7c]">
             <ul className="space-y-2">
@@ -71,12 +69,13 @@ const SingleProduct = async ({ params }: TProductId) => {
               <li>20 MP Electro and 28 megapixel CMOS rear camera</li>
             </ul>
           </div>
-          <p className=" text-[#7c7c7c] my-5">
-           {products.data.description} 
-          </p>
-          <span className="my-5 block"> {products.data.brand}: FW511948218</span>
+          <p className=" text-[#7c7c7c] my-5">{products?.data?.description}</p>
+          <span className="my-5 block">
+            {" "}
+            {products?.data?.brand}: FW511948218
+          </span>
           <div className="flex items-">
-            <span className="text-5xl">${products.data.price}</span>{" "}
+            <span className="text-5xl">${products?.data?.price}</span>{" "}
             <del className="text-xl">$2,299.00</del>
           </div>
           <hr className="my-5" />
@@ -89,9 +88,9 @@ const SingleProduct = async ({ params }: TProductId) => {
           <div>
             <span>Quantity </span>
             <div className="flex items-center mt-2 mb-5">
-              <AddProductBtn />
+              <AddProductBtn/>
 
-            <Link href='/cart'>  <button className="addToCartBtn">Add to cart</button></Link>
+              <button className="addToCartBtn">Add to cart</button>
             </div>
           </div>
         </div>

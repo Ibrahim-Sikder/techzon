@@ -19,6 +19,7 @@ import {
 import Container from "@/components/ui/Container";
 import { TFlashSale } from "@/types";
 import FlashSaleTime from "@/components/ui/HomePage/FlashSellProduct/FlashSaleTime";
+import Link from "next/link";
 const FlashSellProduct = async () => {
   const res = await fetch("http://localhost:5000/api/v1/flash-sale", {
     next: {
@@ -44,7 +45,8 @@ const FlashSellProduct = async () => {
             </p>
             <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid xl:grid-cols-4 gap-10 place-content-center place-items-center">
               {flashData.data.flashSaleProductsTrue.map((data: TFlashSale) => (
-                <div key={data._id} className="flashSellProductWrap">
+               <Link href='/products'>
+                 <div key={data._id} className="flashSellProductWrap">
                   <div className="flashContent">
                     <span className="bg-[#F14705] text-white rounded-full p-1 text-sm mt-3">
                       {data.discount}
@@ -86,6 +88,7 @@ const FlashSellProduct = async () => {
                     </div>
                   </div>
                 </div>
+               </Link>
               ))}
             </div>
           </>

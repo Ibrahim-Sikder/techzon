@@ -108,7 +108,7 @@ const Cart = () => {
           </div>
           <Link href="/checkout">
             <button className="shopBtn checkoutBtn">
-              Procceed To Checkout
+              Proceed To Checkout
             </button>
           </Link>
         </div>

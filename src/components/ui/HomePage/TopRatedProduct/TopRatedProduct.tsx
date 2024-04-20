@@ -38,7 +38,8 @@ const TopRatedProduct = async () => {
       </div>
       <div className="lg:grid-cols-3 md:grid-cols-2 grid-cols-1 grid xl:grid-cols-4 gap-10 place-content-center place-items-center mt-10">
         {sortedProducts?.slice(0, 8).map((data: TProduct) => (
-          <div key={data._id} className="flashSellProductWrap">
+         <Link href='/products'>
+           <div key={data._id} className="flashSellProductWrap">
             <div className="flashContent">
               <Image width="500" height="500" src={data.image} alt="flash" />
               <div>
@@ -72,6 +73,7 @@ const TopRatedProduct = async () => {
               />
             </div>
           </div>
+         </Link>
         ))}
       </div>
     </Container>

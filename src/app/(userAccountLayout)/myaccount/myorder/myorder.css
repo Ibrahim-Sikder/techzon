@@ -1,0 +1,10 @@
+.orderTable {
+	width: 900px !important;
+	margin: 0 auto;
+}
+.orderTable :where(th, tr) {
+	border: 1px solid #ddd;
+}
+.orderTable :where(td, th, tr ) {
+	text-align: center;
+}

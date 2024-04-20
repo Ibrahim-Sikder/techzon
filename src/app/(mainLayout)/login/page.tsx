@@ -11,7 +11,7 @@ const Login = () => {
                 <div className="text-center">
                     <h3 className="text-3xl font-bold text-center mb-5  capitalize">Hello</h3>
                     <span>
-                        Sign In TechZon or <Link href='/register'><b className="border-b-2 border-[#00AB55]">Create an account </b></Link>
+                        Sign In TechZon or <Link href='/register'><b className="border-b-2 border-[#2251CF]">Create an account </b></Link>
                     </span>
                 </div>
                 <form className="businessFormWrap">
@@ -20,7 +20,7 @@ const Login = () => {
                             label="Email or Username " type="text" />
 
                     </div>
-                    <button className="signupBtn loginBtn bg-[#00AB55] text-white businessBtn">Continuo </button>
+                    <button className="signupBtn loginBtn bg-[#2251CF] text-white businessBtn">Continuo </button>
                     <div className="flex flex-col my-3 w-[320px] border-opacity-50">
                         <div className="divider">OR</div>
                     </div>
